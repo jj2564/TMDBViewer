@@ -8,4 +8,32 @@
       location = "container:"
       name = "01.Application">
    </Group>
+   <Group
+      location = "container:"
+      name = "02.Infrastructure">
+      <FileRef
+         location = "group:../02.Infrastructure/Infrastructure.Core/Infrastructure.Core.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../02.Infrastructure/Infrastructure.Hosting/Infrastructure.Hosting.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../02.Infrastructure/Infrastructure.HttpClient/Infrastructure.HttpClient.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../02.Infrastructure/Infrastructure.HttpClient.Hosting/Infrastructure.HttpClient.Hosting.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../02.Infrastructure/Infrastructure.HttpClient.Curl/Infrastructure.HttpClient.Curl.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "absolute:/Users/s409896/Desktop/Practice/TMDBViewer/src/02.Infrastructure/Infrastructure.HttpClient.Curl/../Infrastructure.DataStorage/Infrastructure.DataStorage.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../02.Infrastructure/Infrastructure.DataStorage.Hosting/Infrastructure.DataStorage.Hosting.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../02.Infrastructure/Infrastructure.DataStorage.RealmSwift/Infrastructure.DataStorage.RealmSwift.xcodeproj">
+      </FileRef>
+   </Group>
 </Workspace>
