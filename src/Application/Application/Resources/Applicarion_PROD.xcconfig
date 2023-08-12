@@ -1,0 +1,15 @@
+//
+//  Application_PROD.xcconfig
+//  Application
+//
+//  Created by Irving Huang on 2023/1/11.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+Environment = PROD
+
+APP_BUNDLE_IDENTIFIER = com.irvinghuang.TMDBViewer
+
+APP_DISPLAY_NAME = TMDBViewer

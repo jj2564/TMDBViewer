@@ -1,0 +1,7 @@
+xcassets:
+  inputs:
+    - Application/Resources/Assets.xcassets
+  outputs:
+    - templateName: swift5
+      output: Application/Sources/Images.swift
+
