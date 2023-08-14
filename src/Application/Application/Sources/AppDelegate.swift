@@ -7,14 +7,10 @@
 
 import UIKit
 
-// Infrastructure
 import Infrastructure_Core
+
 import Infrastructure_Hosting
-import Infrastructure_HttpClient_Hosting
-import Infrastructure_DataStorage_Hosting
-
-// Application
-
+import Infrastructure_HttpClient
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,35 +19,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        setupCore()
         initalHosting()
+        setupWithCore()
         setupRootViewController()
         
         return true
     }
     
-    private func initalHosting() {
-        
-        HostContext.current.registerFactory(factory: HttpClientFactory(), isSingle: true)
-        HostContext.current.registerFactory(factory: DataStorageFactory(), isSingle: true)
-        
+    func initalHosting() {
+        ContextFactoryRegister().initialHosting()
     }
     
     private func setupRootViewController() {
         
-        let rootVC = ViewController()
+        let rootVC = RootViewController()
         let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = UINavigationController(rootViewController:  rootVC)
+        window.rootViewController = BaseNavigationController(rootViewController:  rootVC)
         window.makeKeyAndVisible()
         
         self.window = window
         
     }
 
-    private func setupCore() {
+    private func setupWithCore() {
+        
         if InfrastructureCoreContext.shared.mode == .DEV {
             print("Irving| Is Develop Mode.")
         }
+        
+        let token = InfrastructureCoreContext.shared.accessToken
+        
+        let httpClient: HttpClient? = HostContext.current.getService()
+        httpClient?.setToken(token)
+        
     }
 
 }

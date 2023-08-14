@@ -37,11 +37,20 @@ public class InfrastructureCoreContext {
         }
         self.mode = mode
         
+        guard let token = infoDictionary["AccessToken"] as? String else {
+            fatalError("Doesn't have TMDB token")
+        }
+        
+        self.accessToken = token
     }
     
     
     //MARK: - Properties
     public var mode: Mode = .PROD
+    
+    public var accessToken: String = ""
+    
+    public var serviceUrl: String = "https://api.themoviedb.org/3/"
     
     
 }

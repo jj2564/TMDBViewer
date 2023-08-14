@@ -13,3 +13,6 @@ Environment = DEV
 APP_BUNDLE_IDENTIFIER = com.irvinghuang.TMDBViewer.DEV
 
 APP_DISPLAY_NAME = 開發版_TV
+
+ACCESS_TOKEN = YOUR_TOKEN
+

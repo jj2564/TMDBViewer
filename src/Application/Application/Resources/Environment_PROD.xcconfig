@@ -13,3 +13,5 @@ Environment = PROD
 APP_BUNDLE_IDENTIFIER = com.irvinghuang.TMDBViewer
 
 APP_DISPLAY_NAME = TMDBViewer
+
+ACCESS_TOKEN = YOUR_TOKEN

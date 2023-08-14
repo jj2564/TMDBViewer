@@ -1,6 +1,18 @@
 # Application
 
 
+## How to use?
+
+請先在 `Environment_DEV` & `Enviornment_PROD` 填寫 TMDB 的 Access Token
+正常情況下不會採用這種方式來放置Token，現階段暫無製作登入取得Token的計畫，因此先採用此種方式來進行。
+
+請透過 
+```
+/src/Application/Application.xcworkspace
+```
+來執行專案，本專案並無使用 `cocoapod` or `carthage` 等等的開發輔助工具，請正常的使用 `Xcode 14` 以上的版本進行開啟執行即可。
+
+
 ## Environment Intro
 
 這是一個基礎的專案，可以用於快速建立一個專案的起始。
@@ -31,4 +43,9 @@
 >> 用來放通用型的服務，如 `HttpClient`、`DataStorage`、`Logging`、`Identity`、`Security` 或是專案的 `Configuration`，不過還在思考與建製中，雖然目前工作上有在使用，但是並不是我個人期望的最終版本。
 
 
-## {NEW PROJECT} Intro
+## TMDB Application Intro
+
+圖片icon來自於[網路素材](https://iconscout.com/icon/the-movie-database-3627833)，採 1024x1024px 的 single size 。
+
+同常完整的專案我會再建立一個 `Application.Core` 在 `01.Application` 用來放置專屬於這個 App 的相關設定，可能根據環境變化的網址(ex. DEV, STAGE, PROD)，或是一些引導ContextFactory的設置，但本專案功能較侷限因此採較迅速可以建立專案的方式來進行。
+

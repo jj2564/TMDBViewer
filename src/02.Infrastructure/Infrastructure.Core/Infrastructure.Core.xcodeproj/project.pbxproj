@@ -10,6 +10,7 @@
 		9D2E10652A87806800E17215 /* Infrastructure_Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D2E10642A87806800E17215 /* Infrastructure_Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D2E10712A878D6200E17215 /* InfrastructureCoreContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2E10702A878D6200E17215 /* InfrastructureCoreContext.swift */; };
 		9D2E10742A878E9E00E17215 /* String+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2E10732A878E9E00E17215 /* String+Error.swift */; };
+		9D9EDE0C2A88021400BBDE7D /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9EDE0B2A88021400BBDE7D /* NSObject+ClassName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +18,7 @@
 		9D2E10642A87806800E17215 /* Infrastructure_Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Infrastructure_Core.h; sourceTree = "<group>"; };
 		9D2E10702A878D6200E17215 /* InfrastructureCoreContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfrastructureCoreContext.swift; sourceTree = "<group>"; };
 		9D2E10732A878E9E00E17215 /* String+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Error.swift"; sourceTree = "<group>"; };
+		9D9EDE0B2A88021400BBDE7D /* NSObject+ClassName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		9D2E10722A878E6000E17215 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				9D9EDE0B2A88021400BBDE7D /* NSObject+ClassName.swift */,
 				9D2E10732A878E9E00E17215 /* String+Error.swift */,
 			);
 			path = Extensions;
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D2E10712A878D6200E17215 /* InfrastructureCoreContext.swift in Sources */,
+				9D9EDE0C2A88021400BBDE7D /* NSObject+ClassName.swift in Sources */,
 				9D2E10742A878E9E00E17215 /* String+Error.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

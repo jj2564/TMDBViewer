@@ -50,27 +50,42 @@ public func jsonDictionary<T: Encodable>(encodable: T) throws -> JSONDictionary?
     return data.dictionary
 }
 
-public func getResponse(_ httpClient: HttpClient?, url: String, encodableItem: Encodable) throws -> HttpResponse {
+
+// MARK: - Get
+public func getResponse(_ httpClient: HttpClient?, url: String) throws -> HttpResponse {
     
-    let data = try jsonData(encodable: encodableItem)
-    let response = try getResponse(httpClient, url: url, data: data)
+    let request = HttpRequest(url: url, headers: headers, content: Data())
+    let postRespone = try httpClient?.get(request)
+    guard let response = postRespone else {
+        throw HttpError.networkError("連線錯誤")
+    }
     
     return response
 }
 
 
-public func getResponse(_ httpClient: HttpClient?, url: String, dictionary: JSONDictionary, extraHeaders: [String: String]? = nil) throws -> HttpResponse {
+// MARK: - Post
+public func postResponse(_ httpClient: HttpClient?, url: String, encodableItem: Encodable) throws -> HttpResponse {
+    
+    let data = try jsonData(encodable: encodableItem)
+    let response = try postResponse(httpClient, url: url, data: data)
+    
+    return response
+}
+
+
+public func postResponse(_ httpClient: HttpClient?, url: String, dictionary: JSONDictionary, extraHeaders: [String: String]? = nil) throws -> HttpResponse {
     
     guard let data = dictionary.data else {
         throw "資料輸入錯誤"
     }
     
-    let response = try getResponse(httpClient, url: url, data: data, extraHeaders: extraHeaders)
+    let response = try postResponse(httpClient, url: url, data: data, extraHeaders: extraHeaders)
     
     return response
 }
 
-public func getResponse(_ httpClient: HttpClient?, url: String, data: Data, extraHeaders: [String: String]? = nil) throws -> HttpResponse {
+public func postResponse(_ httpClient: HttpClient?, url: String, data: Data, extraHeaders: [String: String]? = nil) throws -> HttpResponse {
 
     var header_input = headers
     

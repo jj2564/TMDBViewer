@@ -58,4 +58,9 @@ public class HostContext: ServiceProvider {
         return nil
     }
     
+    public func clearAll() {
+        factoryList = []
+        serviceList = []
+    }
+    
 }
