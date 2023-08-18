@@ -49,3 +49,17 @@
 
 同常完整的專案我會再建立一個 `Application.Core` 在 `01.Application` 用來放置專屬於這個 App 的相關設定，可能根據環境變化的網址(ex. DEV, STAGE, PROD)，或是一些引導ContextFactory的設置，但本專案功能較侷限因此採較迅速可以建立專案的方式來進行。
 
+### NowPlaying
+
+```
+~/NowPlaying/NowPlayingViewController
+```
+
+會去偵測即將滑到底部的時候會去呼叫更多的資料回來實現可以一直瀏覽的效果，理應要加一個loading在footer，受限於時間先空下這塊。
+
+MovieCardView的部分，沒有完全展現Summary，希望能讓使用者點選進去看詳細內容。
+
+本頁面沒有製作讀取中的框架，因本頁尚未確定資料狀態我認為較不適合，再之後的`我的收藏`因資料庫中已儲存已知數量的movieId，故可先製成框架。
+
+
+

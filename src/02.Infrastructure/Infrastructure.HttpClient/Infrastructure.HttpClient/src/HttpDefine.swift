@@ -15,7 +15,7 @@ public typealias JSONDictionary = [String: Any]
 
 public let refreshDay: Int = 1
 
-let ios8061formatter = ISO8601DateFormatter()
+let customFormatter = DateFormatter()
 
 public let headers: HttpHeaders = [
     "Content-Type": "application/json",
@@ -26,7 +26,10 @@ public let headers: HttpHeaders = [
 // MARK: - Helper functions for creating encoders and decoders
 public func newJSONDecoder() -> JSONDecoder {
     let decoder = JSONDecoder()
-    decoder.dateDecodingStrategy = .iso8601
+    
+    customFormatter.dateFormat = "yyyy-MM-dd"
+    
+    decoder.dateDecodingStrategy = .formatted(customFormatter)
     decoder.keyDecodingStrategy = .convertFromSnakeCase
     return decoder
 }

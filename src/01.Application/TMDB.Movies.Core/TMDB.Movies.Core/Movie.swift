@@ -18,7 +18,7 @@ public class Movie: Codable {
     public var overview: String?
     public var popularity: Double?
     public var posterPath: String?
-    public var releaseDate: String?
+    public var releaseDate: Date?
     public var title: String?
     public var video: Bool?
     public var voteAverage: Double?
@@ -34,7 +34,7 @@ public class Movie: Codable {
         overview: String? = nil,
         popularity: Double? = nil,
         posterPath: String? = nil,
-        releaseDate: String? = nil,
+        releaseDate: Date? = nil,
         title: String? = nil,
         video: Bool? = nil,
         voteAverage: Double? = nil,
@@ -55,4 +55,39 @@ public class Movie: Codable {
         self.voteAverage = voteAverage
         self.voteCount = voteCount
     }
+    
+}
+
+public extension Movie {
+    
+    var landscpaeThumbnailUrl: String? {
+        getImageUrl(isPortrait: false, isThumb: true)
+    }
+    
+    var landscapeOriginalUrl: String? {
+        getImageUrl(isPortrait: false, isThumb: false)
+    }
+    
+    private func getImageUrl(isPortrait: Bool, isThumb: Bool) -> String? {
+        
+        let imageBaseUrl = "https://image.tmdb.org/t/p/"
+        let name = isPortrait ? posterPath : backdropPath
+        let size  = isThumb ? "w342" : "original"
+        guard let name else { return nil }
+        return imageBaseUrl + size + name
+        
+    }
+    
+}
+
+extension Movie: Hashable {
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    public static func == (lhs: Movie, rhs: Movie) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
 }

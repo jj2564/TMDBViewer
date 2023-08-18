@@ -40,8 +40,13 @@ public class InfrastructureCoreContext {
         guard let token = infoDictionary["AccessToken"] as? String else {
             fatalError("Doesn't have TMDB token")
         }
-        
         self.accessToken = token
+        
+        guard let serviceUrl = infoDictionary["ServiceUrl"] as? String else {
+            fatalError("Doesn't have Service URL")
+        }
+        self.serviceUrl = serviceUrl
+        
     }
     
     
@@ -50,7 +55,7 @@ public class InfrastructureCoreContext {
     
     public var accessToken: String = ""
     
-    public var serviceUrl: String = "https://api.themoviedb.org/3/"
+    public var serviceUrl: String = ""
     
     
 }

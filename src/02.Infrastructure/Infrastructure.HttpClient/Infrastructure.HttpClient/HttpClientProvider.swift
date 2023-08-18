@@ -14,4 +14,5 @@ public protocol HttpClientProvider {
     func post(_ request: HttpRequest) throws -> HttpResponse
     
     func setToken(_ token: String)
+    
 }

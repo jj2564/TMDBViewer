@@ -17,7 +17,7 @@ public class RestMoviesRepository: MoviesRepository {
     
     //MARK: - Fields
     private var httpClient: HttpClient?
-    private let baseUrl = InfrastructureCoreContext.shared.serviceUrl + "movie/"
+    private let endpoint = "movie/"
     
     
     //MARK: - Constructors
@@ -29,7 +29,9 @@ public class RestMoviesRepository: MoviesRepository {
     //MARK: - Method
     public func findPlayingList(by page: Int) throws -> NowPlaying? {
         
-        let url = baseUrl + "now_playing?language=en-US&page=" + "\(page)"
+        guard let service = httpClient?.serviceUrl else { throw "URL Error" }
+        
+        let url = service + endpoint + "now_playing?language=en-US&page=" + "\(page)"
         
         let response = try getResponse(httpClient, url: url)
         let result = try NowPlaying(data: response.content)

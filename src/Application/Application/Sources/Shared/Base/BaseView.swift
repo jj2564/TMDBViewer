@@ -49,6 +49,8 @@ public class BaseView<T: BaseViewModel>: UIView {
         }
     }
     
+    public lazy var nodataView = createNodataView()
+    
     
     //MARK: - Methods
     public func initEvent() { }
@@ -92,6 +94,18 @@ public class BaseView<T: BaseViewModel>: UIView {
         loadingView.centerInSuperview()
         
         return loadingView
+    }
+    
+    public func createNodataView() -> UILabel {
+        let label = quickLabel()
+        label.font = .title_l_bold
+        label.textColor = .secondary10
+        label.text = "很抱歉，目前無資料。"
+        
+        addSubview(label)
+        label.centerInSuperview()
+        
+        return label
     }
     
 }

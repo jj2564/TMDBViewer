@@ -6,23 +6,30 @@
 //
 
 import UIKit
+import TinyConstraints
 
-import Infrastructure_Hosting
-import TMDB_Movies_Core
 
 class RootViewController: BaseViewController {
 
 
     //MARK: - Fields
-    private var moviesContext: MoviesContext? = HostContext.current.getService()
     
     
     //MARK: - Constructors
     override func loadView() {
         super.loadView()
         
-        let result = try? moviesContext?.moviesRepository?.findPlayingList(by: 1)
-        print(result)
+        let button = UIButton()
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("點此進入現在播放頁面", for: .normal)
+        button.setTitleColor(.secondary10, for: .normal)
+        button.titleLabel?.font = .title_l_bold
+        
+        button.addTarget(self, action: #selector(didPressedNowPlaying(_:)), for: .touchUpInside)
+        view.addSubview(button)
+        
+        button.centerInSuperview()
         
     }
     
@@ -31,5 +38,11 @@ class RootViewController: BaseViewController {
     
     
     //MARK: - Methods
+    @objc private func didPressedNowPlaying(_ sender: UIButton) {
+        
+        let vc = NowPlayingViewController()
+        UIApplication.rootViewController = BaseNavigationController(rootViewController: vc)
+        
+    }
 }
 

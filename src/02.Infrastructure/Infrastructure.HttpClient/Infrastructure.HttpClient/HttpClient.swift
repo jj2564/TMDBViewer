@@ -7,11 +7,13 @@
 
 import Foundation
 
-public class HttpClient {
+open class HttpClient {
     
     
     //MARK: - Fields
     public private(set) var httpClientProvider: HttpClientProvider!
+    
+    public private(set) var serviceUrl: String = ""
     
     
     //MARK: - Constructors
@@ -21,16 +23,20 @@ public class HttpClient {
     
     
     //MARK: - Methods
-    public func get(_ request: HttpRequest) throws -> HttpResponse {
+    open func get(_ request: HttpRequest) throws -> HttpResponse {
         try httpClientProvider.get(request)
     }
     
-    public func post(_ request: HttpRequest) throws -> HttpResponse {
+    open func post(_ request: HttpRequest) throws -> HttpResponse {
         try httpClientProvider.post(request)
     }
     
-    public func setToken(_ token: String) {
+    open func setToken(_ token: String) {
         httpClientProvider.setToken(token)
+    }
+    
+    open func setServiceUrl(_ urlString: String) {
+        self.serviceUrl = urlString
     }
     
 }

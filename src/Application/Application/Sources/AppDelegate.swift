@@ -48,9 +48,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         let token = InfrastructureCoreContext.shared.accessToken
+        let serviceUrl = InfrastructureCoreContext.shared.serviceUrl
         
         let httpClient: HttpClient? = HostContext.current.getService()
         httpClient?.setToken(token)
+        httpClient?.setServiceUrl(serviceUrl)
+        
         
     }
 
