@@ -29,6 +29,8 @@ class NowPlayingViewModel: BaseViewModel {
     
     
     //MARK: - Properties
+    public lazy var moviesRepository: MoviesRepository? = moviesContext?.moviesRepository
+    
     public var movieList: [Movie] = []
     
     public var totalPage: Int? { nowPlaying?.totalPages }
@@ -36,7 +38,7 @@ class NowPlayingViewModel: BaseViewModel {
     
     
     //MARK: - Methods
-    public func loadMore() {
+    public func loadMore(completion: (() -> Void)?  = nil) {
         
         if loadedPage == totalPage || totalResult == movieList.count { return }
         
@@ -44,6 +46,7 @@ class NowPlayingViewModel: BaseViewModel {
         fetchPlayList(by: loadedPage) { [weak self] _ in
             self?.updateView?()
             self?.stopLoadingView?()
+            completion?()
         }
         
     }
@@ -51,7 +54,7 @@ class NowPlayingViewModel: BaseViewModel {
     private func fetchPlayList(by page: Int, completion: ((Bool) -> Void)?  = nil) {
     
         AsyncHelper().excute { [unowned self] in
-            try moviesContext?.moviesRepository?.findPlayingList(by: page+1)
+            try moviesRepository?.findPlayingList(by: page+1)
         } completion: { [weak self] result in
             guard let `self` = self else { return }
             guard let result else { return }

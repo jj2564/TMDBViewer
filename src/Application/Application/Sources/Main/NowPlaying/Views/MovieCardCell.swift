@@ -40,6 +40,8 @@ class MovieCardCell: UITableViewCell {
     
     //MARK: - Methods
     private func setupViews() {
+        
+        backgroundColor = .clear
         contentView.backgroundColor = .clear
         contentView.addSubview(cardView)
         

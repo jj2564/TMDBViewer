@@ -42,6 +42,10 @@
 > 02.Infrastructure
 >> 用來放通用型的服務，如 `HttpClient`、`DataStorage`、`Logging`、`Identity`、`Security` 或是專案的 `Configuration`，不過還在思考與建製中，雖然目前工作上有在使用，但是並不是我個人期望的最終版本。
 
+## Unit Test
+
+在這個專案的設計架構上，是可以透過創造譬如說 `Infrastructure.HttpClient.Mock` 的 FrameWork 來協助專案進行測試(也可以讓開發可以讀取 Mock )，具體上必須打造一個 `Unit Test` 用的流程，不過這部分需要透過修改 `Hosting` 的邏輯才能辦到，目前尚未把這環節設計完全，因此本專案的 `Unit Test` 仍會採用創建同等的 Mock 來進行。
+
 
 ## TMDB Application Intro
 

@@ -91,6 +91,10 @@ extension SYBarButton {
         
         case foward
         
+        case gear
+        
+        case search
+        
         case image(value: UIImage?)
         
         case text(value: String)
@@ -118,21 +122,31 @@ extension SYBarButton {
         var image: UIImage? {
             switch self {
             case .xmark:
-                return UIImage(systemName: "xmark", withConfiguration: UIImage.SymbolConfiguration(pointSize: 16, weight: .medium))
+                return createSymbolImage(by: "xmark")
             case .whiteXmark:
-                return UIImage(systemName: "xmark", withConfiguration: UIImage.SymbolConfiguration(pointSize: 16, weight: .medium))?.withTintColor(.neutral100)
+                return createSymbolImage(by: "xmark")?.withTintColor(.neutral100)
             case .reloadMark:
-                return UIImage(systemName: "arrow.counterclockwise", withConfiguration: UIImage.SymbolConfiguration(pointSize: 16, weight: .medium))
+                return createSymbolImage(by: "arrow.counterclockwise")
             case .back:
-                return UIImage(systemName: "chevron.left", withConfiguration: UIImage.SymbolConfiguration(pointSize: 16, weight: .medium))
+                return createSymbolImage(by: "chevron.left")
             case .foward:
-                return UIImage(systemName: "chevron.right", withConfiguration: UIImage.SymbolConfiguration(pointSize: 16, weight: .medium))
+                return createSymbolImage(by: "chevron.right")
+            case .gear:
+                return createSymbolImage(by: "gearshape")
+            case .search:
+                return createSymbolImage(by: "magnifyingglass")
             case .image(let value):
                 return value
             default:
                 return nil
             }
         }
+        
+        private func createSymbolImage(by name: String) -> UIImage? {
+            UIImage(systemName: name, withConfiguration: UIImage.SymbolConfiguration(pointSize: 16, weight: .medium))
+        }
+        
     }
+    
     
 }

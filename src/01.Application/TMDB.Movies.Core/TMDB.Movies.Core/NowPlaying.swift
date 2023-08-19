@@ -13,6 +13,20 @@ public struct NowPlaying: Codable {
     public var results: [Movie]?
     public var totalPages: Int?
     public var totalResults: Int?
+    
+    public init(
+        dates: DateRange? = nil,
+        page: Int? = nil,
+        results: [Movie]? = nil,
+        totalPages: Int? = nil,
+        totalResults: Int? = nil
+    ) {
+        self.dates = dates
+        self.page = page
+        self.results = results
+        self.totalPages = totalPages
+        self.totalResults = totalResults
+    }
 }
 
 public struct DateRange: Codable {

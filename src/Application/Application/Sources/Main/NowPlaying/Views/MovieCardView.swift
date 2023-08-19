@@ -69,15 +69,18 @@ class MovieCardView: BaseView<MovieCardViewModel> {
     
     private func setupView() {
         
+        backgroundColor = .clear
+        
         let container = RoundShadowContainerView()
         container.radius = 8
         container.isShadow = true
         
         addSubview(container)
-        container.edgesToSuperview(insets: .init(top: 8, left: 16, bottom: 0, right: 16))
+        container.edgesToSuperview(insets: .init(top: 8, left: 8, bottom: 8, right: 8))
         
         container.addSubview(backView)
         backView.edgesToSuperview()
+        backView.backgroundColor = .neutral100
         
         nodataImageView.translatesAutoresizingMaskIntoConstraints = false
         nodataImageView.contentMode = .center
@@ -121,7 +124,7 @@ class MovieCardView: BaseView<MovieCardViewModel> {
         
         let vfls: VFLDictionary = [
             "H:|-(0)-[image]-(0)-|": nil,
-            "H:|-(16)-[name]-(8)-[date]-(16)-|": .alignAllCenterY,
+            "H:|-(16)-[name]-(8)-[date]-(>=16)-|": .alignAllCenterY,
             "H:|-(16)-[sum]-(16)-|": nil,
             "V:|-(0)-[image]-(12)-[name(20)]-(6)-[sum(15)]-(8)-|": nil
         ]
