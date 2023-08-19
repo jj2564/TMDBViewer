@@ -12,19 +12,6 @@ import TMDB_Movies_Core
 
 @testable import Application
 
-class MockMoviesRepository: MoviesRepository {
-    
-    var mockNowPlaying: NowPlaying?
-    
-    func findPlayingList(by page: Int) throws -> NowPlaying? {
-        return mockNowPlaying
-    }
-    
-    func findMovie(by id: String) throws -> Movie? { nil }
-    
-    
-}
-
 
 class NowPlayingViewModelTest: XCTestCase {
     

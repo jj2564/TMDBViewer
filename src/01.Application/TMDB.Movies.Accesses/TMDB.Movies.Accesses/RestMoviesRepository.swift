@@ -29,10 +29,11 @@ public class RestMoviesRepository: MoviesRepository {
     //MARK: - Method
     public func findPlayingList(by page: Int) throws -> NowPlaying? {
         
+        // create url
         guard let service = httpClient?.serviceUrl else { throw "URL Error" }
+        let url = service + endpoint + "now_playing?language=en-US&page=\(page)"
         
-        let url = service + endpoint + "now_playing?language=en-US&page=" + "\(page)"
-        
+        // respone
         let response = try getResponse(httpClient, url: url)
         let result = try NowPlaying(data: response.content)
         
@@ -40,8 +41,17 @@ public class RestMoviesRepository: MoviesRepository {
     }
     
     
-    public func findMovie(by id: String) throws -> Movie? {
-        nil
+    public func findMovieDetail(by id: String) throws -> Movie? {
+        
+        // create url
+        guard let service = httpClient?.serviceUrl else { throw "URL Error" }
+        let url = service + endpoint + "\(id)?language=en-US"
+        
+        // respone
+        let response = try getResponse(httpClient, url: url)
+        let result = try Movie(data: response.content)
+        
+        return result
     }
     
     

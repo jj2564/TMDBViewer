@@ -24,6 +24,19 @@ public class Movie: Codable {
     public var voteAverage: Double?
     public var voteCount: Int?
     
+    // detail
+    public var budget: Int?
+    public var genres: [Genre]?
+    public var homepage: String?
+    public var imdbId: String?
+    public var productionCompanies: [ProductionCompany]?
+    public var productionCountries: [ProductionCountry]?
+    public var revenue: Int?
+    public var runtime: Int?
+    public var spokenLanguages: [SpokenLanguage]?
+    public var status: String?
+    public var tagline: String?
+    
     public init(
         adult: Bool? = nil,
         backdropPath: String? = nil,
@@ -38,7 +51,20 @@ public class Movie: Codable {
         title: String? = nil,
         video: Bool? = nil,
         voteAverage: Double? = nil,
-        voteCount: Int? = nil
+        voteCount: Int? = nil,
+        
+        // detail
+        budget: Int? = nil,
+        genres: [Genre]? = nil,
+        homepage: String? = nil,
+        imdbId: String? = nil,
+        productionCompanies: [ProductionCompany]? = nil,
+        productionCountries: [ProductionCountry]? = nil,
+        revenue: Int? = nil,
+        runtime: Int? = nil,
+        spokenLanguages: [SpokenLanguage]? = nil,
+        status: String? = nil,
+        tagline: String? = nil
     ) {
         self.adult = adult
         self.backdropPath = backdropPath
@@ -54,6 +80,19 @@ public class Movie: Codable {
         self.video = video
         self.voteAverage = voteAverage
         self.voteCount = voteCount
+         
+        // detail
+        self.budget = budget
+        self.genres = genres
+        self.homepage = homepage
+        self.imdbId = imdbId
+        self.productionCompanies = productionCompanies
+        self.productionCountries = productionCountries
+        self.revenue = revenue
+        self.runtime = runtime
+        self.spokenLanguages = spokenLanguages
+        self.status = status
+        self.tagline = tagline
     }
     
 }

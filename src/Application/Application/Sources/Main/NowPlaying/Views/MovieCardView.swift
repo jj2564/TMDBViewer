@@ -7,7 +7,6 @@
 
 import UIKit
 
-import Kingfisher
 import TinyConstraints
 
 
@@ -16,11 +15,10 @@ class MovieCardView: BaseView<MovieCardViewModel> {
     
     //MARK: - Fields
     private let backView = quickView()
-    private let imageView = UIImageView()
+    private let kfImageView = KFImageContainerView()
     private let nameLabel = quickLabel()
     private let dateLabel = quickLabel()
     private let summaryLabel = quickLabel()
-    private let nodataImageView = UIImageView()
     
     
     //MARK: - Constructors
@@ -31,9 +29,7 @@ class MovieCardView: BaseView<MovieCardViewModel> {
     }
     
     public func prepareForReuse() {
-        imageView.image = nil
-        imageView.isHidden = true
-        nodataImageView.isHidden = false
+        kfImageView.prepareForReuse()
         nameLabel.text = nil
         dateLabel.text = nil
         summaryLabel.text = nil
@@ -46,17 +42,7 @@ class MovieCardView: BaseView<MovieCardViewModel> {
     //MARK: - Methods
     override func setupViewModel() {
         
-        if let urlString = viewModel.imageUrl, let url = URL(string: urlString) {
-            imageView.kf.setImage(
-                with: url,
-                options: [
-                    .transition(.fade(1.0)),
-                    .cacheOriginalImage
-                ]) { [weak self] _ in
-                    self?.imageView.isHidden = false
-                    self?.nodataImageView.isHidden = true
-                }
-        }
+        kfImageView.imageUrlString = viewModel.imageUrl
         
         nameLabel.text = viewModel.name
         
@@ -69,6 +55,7 @@ class MovieCardView: BaseView<MovieCardViewModel> {
     
     private func setupView() {
         
+        isUserInteractionEnabled = false
         backgroundColor = .clear
         
         let container = RoundShadowContainerView()
@@ -82,16 +69,7 @@ class MovieCardView: BaseView<MovieCardViewModel> {
         backView.edgesToSuperview()
         backView.backgroundColor = .neutral100
         
-        nodataImageView.translatesAutoresizingMaskIntoConstraints = false
-        nodataImageView.contentMode = .center
-        nodataImageView.image = Asset.nodata.image.resized(to: .init(width: 50, height: 50))
-        nodataImageView.height(50)
-        nodataImageView.width(50)
-        
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.heightToWidth(of: imageView, multiplier: 0.5)
+        kfImageView.imageRatio = 0.5
         
         nameLabel.font = .title_m
         nameLabel.numberOfLines = 0
@@ -105,8 +83,7 @@ class MovieCardView: BaseView<MovieCardViewModel> {
         summaryLabel.numberOfLines = 1
         summaryLabel.lineBreakMode = .byTruncatingTail
         
-        backView.addSubview(nodataImageView)
-        backView.addSubview(imageView)
+        backView.addSubview(kfImageView)
         backView.addSubview(nameLabel)
         backView.addSubview(dateLabel)
         backView.addSubview(summaryLabel)
@@ -116,7 +93,7 @@ class MovieCardView: BaseView<MovieCardViewModel> {
     private func setupLayout() {
         
         let views: ViewsDictionary = [
-            "image": imageView,
+            "image": kfImageView,
             "name": nameLabel,
             "date": dateLabel,
             "sum": summaryLabel
@@ -132,7 +109,6 @@ class MovieCardView: BaseView<MovieCardViewModel> {
         let constraints = constraintsArrayVFL(vfls, views: views)
         NSLayoutConstraint.activate(constraints)
         
-        nodataImageView.center(in: imageView)
         
     }
     

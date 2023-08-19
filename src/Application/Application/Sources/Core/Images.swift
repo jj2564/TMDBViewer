@@ -22,6 +22,7 @@ internal typealias AssetImageTypeAlias = ImageAsset.Image
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Asset {
+  internal static let arrowLeftShadow = ImageAsset(name: "arrow_left_shadow")
   internal static let nodata = ImageAsset(name: "nodata")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

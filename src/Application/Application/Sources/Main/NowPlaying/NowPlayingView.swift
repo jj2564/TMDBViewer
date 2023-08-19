@@ -48,13 +48,14 @@ class NowPlayingView: BaseView<NowPlayingViewModel> {
     private func setupTableView() {
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.separatorStyle = .none
         tableView.estimatedRowHeight = 300
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.sectionHeaderHeight = UITableView.automaticDimension
+        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.backgroundColor = .clear
-        tableView.separatorStyle = .none
+        
         tableView.registerCell(UITableViewCell.self)
         tableView.registerCell(MovieCardCell.self)
         
@@ -66,11 +67,11 @@ class NowPlayingView: BaseView<NowPlayingViewModel> {
 
 extension NowPlayingView: UITableViewDataSource {
     
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.movieList.count
     }
     
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         loadMoreDataIfNeeded(from: indexPath)
         
         if let movie = viewModel.movieList[safe: indexPath.row] {
@@ -90,5 +91,16 @@ extension NowPlayingView: UITableViewDataSource {
 
 
 extension NowPlayingView: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let index = indexPath.row
+        if let movie = viewModel.movieList[safe: index] {
+            let vc = MovieDetailViewController()
+            vc.movie = movie
+            parentViewController?.pushViewController(vc)
+        }
+        
+    }
     
 }

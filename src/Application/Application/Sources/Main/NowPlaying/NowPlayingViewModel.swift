@@ -14,7 +14,7 @@ class NowPlayingViewModel: BaseViewModel {
     
     
     //MARK: - Fields
-    private var moviesContext: MoviesContext? = HostContext.current.getService()
+    private let moviesContext: MoviesContext? = HostContext.current.getService()
     
     private var nowPlaying: NowPlaying? = nil
     
@@ -33,6 +33,7 @@ class NowPlayingViewModel: BaseViewModel {
     
     public var movieList: [Movie] = []
     
+    // bonus info
     public var totalPage: Int? { nowPlaying?.totalPages }
     public var totalResult: Int? { nowPlaying?.totalResults }
     
@@ -44,8 +45,12 @@ class NowPlayingViewModel: BaseViewModel {
         
         startLoadingView?()
         fetchPlayList(by: loadedPage) { [weak self] _ in
+            
+            // UI event
             self?.updateView?()
             self?.stopLoadingView?()
+            
+            // completion
             completion?()
         }
         
@@ -54,13 +59,21 @@ class NowPlayingViewModel: BaseViewModel {
     private func fetchPlayList(by page: Int, completion: ((Bool) -> Void)?  = nil) {
     
         AsyncHelper().excute { [unowned self] in
+            
             try moviesRepository?.findPlayingList(by: page+1)
         } completion: { [weak self] result in
+            
             guard let `self` = self else { return }
             guard let result else { return }
+            
+            // value assign
             self.loadedPage += 1
             self.nowPlaying = result
+            
+            // figuew
             self.figureResult(result)
+            
+            // completion
             completion?(true)
         } error: { _ in
             completion?(false)
