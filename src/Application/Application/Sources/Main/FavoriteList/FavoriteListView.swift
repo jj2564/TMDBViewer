@@ -65,6 +65,7 @@ extension FavoriteListView: UITableViewDataSource {
             let cell = tableView.dequeueCell(MovieCardCell.self, indexPath: indexPath)
             
             cell.viewModel = vm
+            vm.fetchData()
             
             return cell
         }

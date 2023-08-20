@@ -20,12 +20,18 @@ class MovieCardView: BaseView<MovieCardViewModel> {
     private let dateLabel = quickLabel()
     private let summaryLabel = quickLabel()
     
+    private let favorButton = ToggleFavorButton()
+    
     
     //MARK: - Constructors
     override func initEvent() {
         setupView()
         setupLayout()
         setupViewModel()
+    }
+    
+    override func updateView() {
+        updateValue()
     }
     
     public func prepareForReuse() {
@@ -41,6 +47,12 @@ class MovieCardView: BaseView<MovieCardViewModel> {
     
     //MARK: - Methods
     override func setupViewModel() {
+        updateValue()
+        
+        favorButton.viewModel = viewModel.favorButtonViewModel
+    }
+    
+    private func updateValue() {
         
         kfImageView.imageUrlString = viewModel.imageUrl
         
@@ -50,17 +62,16 @@ class MovieCardView: BaseView<MovieCardViewModel> {
         dateLabel.text = dateText ?? "****-**-**"
         
         summaryLabel.text = viewModel.summary ?? "*****"
-        
     }
     
     private func setupView() {
         
-        isUserInteractionEnabled = false
         backgroundColor = .clear
         
         let container = RoundShadowContainerView()
         container.radius = 8
         container.isShadow = true
+        container.tapEnable = false
         
         addSubview(container)
         container.edgesToSuperview(insets: .init(top: 8, left: 8, bottom: 8, right: 8))
@@ -83,10 +94,14 @@ class MovieCardView: BaseView<MovieCardViewModel> {
         summaryLabel.numberOfLines = 1
         summaryLabel.lineBreakMode = .byTruncatingTail
         
+        favorButton.setWhiteAndSmaller()
+        
         backView.addSubview(kfImageView)
         backView.addSubview(nameLabel)
         backView.addSubview(dateLabel)
         backView.addSubview(summaryLabel)
+        
+        backView.addSubview(favorButton)
         
     }
     
@@ -109,7 +124,8 @@ class MovieCardView: BaseView<MovieCardViewModel> {
         let constraints = constraintsArrayVFL(vfls, views: views)
         NSLayoutConstraint.activate(constraints)
         
-        
+        favorButton.topToSuperview(offset: 12)
+        favorButton.rightToSuperview(offset: -12)
     }
     
 }

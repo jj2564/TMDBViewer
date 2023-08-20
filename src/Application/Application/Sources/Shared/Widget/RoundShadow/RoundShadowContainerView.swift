@@ -11,16 +11,18 @@ class RoundShadowContainerView: UIView {
     
     
     //MARK: - Fields
+    private var tap: UITapGestureRecognizer? = nil
     
     
     //MARK: - Constructors
     required init() {
+        
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
         
-        
         let tap = UITapGestureRecognizer(target: self, action: #selector(didTappedView))
         addGestureRecognizer(tap)
+        self.tap = tap
     }
     
     required init?(coder: NSCoder) {
@@ -37,6 +39,10 @@ class RoundShadowContainerView: UIView {
     
     public var isShadow: Bool = true {
         didSet { shadowToggle() }
+    }
+    
+    public var tapEnable: Bool = true {
+        didSet { tap?.isEnabled = tapEnable }
     }
     
     
