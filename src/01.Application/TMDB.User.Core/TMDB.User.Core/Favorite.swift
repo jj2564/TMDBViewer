@@ -9,8 +9,8 @@ import Foundation
 
 public class Favorite: Codable {
     
-    var id: String!
-    var createDate: Date!
+    public var id: String!
+    public var createDate: Date!
     
     public init(
         id: String,

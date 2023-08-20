@@ -65,19 +65,7 @@ public class RealmDataStorageProvider: DataStorageProvider {
     }
     
     public func fetch(by key: String, isValid: Bool) throws -> Data {
-//
-//        let predicate: NSPredicate = NSPredicate(format: "key = %@", key)
-//
-//        guard let objects = manager.objects(RealmBasicDataStorage.self, predicate: predicate) else {
-//            throw "無資料"
-//        }
-//
-//        guard let object = objects.first else { throw "無資料" }
-//
-//        if object.validDate <= Date(), isValid {
-//            throw "物件已過時"
-//        }
-//
+
         let datas = try fetch(by: [key], isValid: isValid)
         
         guard let data = datas.first else { throw "無資料" }

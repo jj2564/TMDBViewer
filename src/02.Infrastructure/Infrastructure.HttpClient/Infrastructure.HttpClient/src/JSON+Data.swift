@@ -41,7 +41,7 @@ public extension Decodable {
                 let newList = list.map { $0.convertToDictionary() }
                 dictionary[key] = newList
             } else if let date = child.value as? Date {
-                let dateString = iso8601FormatterFull.string(from: date)
+                let dateString = iso8601Formatter.string(from: date)
                 dictionary[key] = dateString
             } else {
                 dictionary[key] = child.value

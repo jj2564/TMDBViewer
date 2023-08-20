@@ -7,12 +7,14 @@
 
 import Foundation
 
+import Infrastructure_Hosting
 import TMDB_Movies_Core
 
 class MovieCardViewModel: BaseViewModel {
     
     
     //MARK: - Fields
+    private let moviesContext: MoviesContext? = HostContext.current.getService()
     
     
     //MARK: - Constructors
@@ -33,6 +35,16 @@ class MovieCardViewModel: BaseViewModel {
     
     
     //MARK: - Methods
+    public func fetchData(completion: ((Bool) -> Void)?  = nil) {
+        
+        guard let id = movie?.id else { return }
+        
+    }
+    
+    private func fetchMovie(by id: Int, completion: ((Bool) -> Void)?  = nil) {
+        
+    }
+    
     private func updateValue() {
         imageUrl = movie?.landscpaeThumbnailUrl
         name = movie?.originalTitle

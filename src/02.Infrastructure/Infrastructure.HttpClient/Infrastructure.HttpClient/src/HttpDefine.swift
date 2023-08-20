@@ -13,7 +13,7 @@ import Infrastructure_Core
 public typealias JSONDictionary = [String: Any]
 
 let iso8601Formatter = ISO8601DateFormatter()
-let iso8601FormatterFull = ISO8601DateFormatter()
+let customFormatter = DateFormatter()
 
 public let refreshDay: Int = 1
 
@@ -31,9 +31,9 @@ public func newJSONDecoder() -> JSONDecoder {
         let container = try decoder.singleValueContainer()
         let dateString = try container.decode(String.self)
         
-        if let date = iso8601FormatterFull.date(from: dateString) {
+        if let date = iso8601Formatter.date(from: dateString) {
             return date
-        } else if let date = iso8601Formatter.date(from: dateString) { // 尝试使用第二个格式化器
+        } else if let date = customFormatter.date(from: dateString) {
             return date
         } else {
             throw DecodingError.dataCorruptedError(in: container, debugDescription: "Cannot decode date string: \(dateString)")

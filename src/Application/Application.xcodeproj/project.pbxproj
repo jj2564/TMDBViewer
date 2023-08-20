@@ -21,12 +21,19 @@
 		9D35D98D2A89B36C004AF453 /* ContextFactoryRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D35D98C2A89B36C004AF453 /* ContextFactoryRegister.swift */; };
 		9D3C87352A8633490097AFF4 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C872C2A8633490097AFF4 /* RootViewController.swift */; };
 		9D3C87392A8633490097AFF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C87322A8633490097AFF4 /* AppDelegate.swift */; };
-		9D6BF8E12A91B93000408A85 /* TMDB_User_Accesses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6BF8E02A91B93000408A85 /* TMDB_User_Accesses.framework */; };
-		9D6BF8E32A91B93000408A85 /* TMDB_User_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6BF8E22A91B93000408A85 /* TMDB_User_Core.framework */; };
-		9D6BF8E52A91B93000408A85 /* TMDB_User_Hosting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6BF8E42A91B93000408A85 /* TMDB_User_Hosting.framework */; };
 		9D6BF8E72A91B93B00408A85 /* TMDB_User_Accesses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6BF8E62A91B93B00408A85 /* TMDB_User_Accesses.framework */; };
 		9D6BF8E92A91B93B00408A85 /* TMDB_User_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6BF8E82A91B93B00408A85 /* TMDB_User_Core.framework */; };
 		9D6BF8EB2A91B93B00408A85 /* TMDB_User_Hosting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6BF8EA2A91B93B00408A85 /* TMDB_User_Hosting.framework */; };
+		9D6BF8EE2A91DC2A00408A85 /* FavoriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6BF8ED2A91DC2A00408A85 /* FavoriteListViewController.swift */; };
+		9D6BF8F02A91DC3800408A85 /* FavoriteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6BF8EF2A91DC3800408A85 /* FavoriteListViewModel.swift */; };
+		9D6BF8F22A91DC4500408A85 /* FavoriteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6BF8F12A91DC4500408A85 /* FavoriteListView.swift */; };
+		9D6BF8F62A91DD2500408A85 /* ToggleFavorButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6BF8F52A91DD2500408A85 /* ToggleFavorButtonViewModel.swift */; };
+		9D6BF9012A921EFD00408A85 /* TMDB_User_Accesses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6BF8FB2A921DE900408A85 /* TMDB_User_Accesses.framework */; };
+		9D6BF9022A921EFD00408A85 /* TMDB_User_Accesses.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6BF8FB2A921DE900408A85 /* TMDB_User_Accesses.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9D6BF9032A921EFF00408A85 /* TMDB_User_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6BF8FD2A921DE900408A85 /* TMDB_User_Core.framework */; };
+		9D6BF9042A921EFF00408A85 /* TMDB_User_Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6BF8FD2A921DE900408A85 /* TMDB_User_Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9D6BF9052A921F0100408A85 /* TMDB_User_Hosting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6BF8FF2A921DE900408A85 /* TMDB_User_Hosting.framework */; };
+		9D6BF9062A921F0100408A85 /* TMDB_User_Hosting.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6BF8FF2A921DE900408A85 /* TMDB_User_Hosting.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9D9EDD992A879CD800BBDE7D /* Infrastructure_Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9EDD972A879CD800BBDE7D /* Infrastructure_Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9D9EDDA62A879F2D00BBDE7D /* Infrastructure_DataStorage_Hosting.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9EDDA42A879F2D00BBDE7D /* Infrastructure_DataStorage_Hosting.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9D9EDDAE2A87F41900BBDE7D /* ApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9EDDAD2A87F41900BBDE7D /* ApplicationTests.swift */; };
@@ -114,9 +121,6 @@
 		9DFC28712A90B724006E6741 /* KFImageContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC28702A90B724006E6741 /* KFImageContainerView.swift */; };
 		9DFC28742A90C6BC006E6741 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC28732A90C6BC006E6741 /* ToggleButton.swift */; };
 		9DFC28762A90C83C006E6741 /* ToggleFavorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC28752A90C83C006E6741 /* ToggleFavorButton.swift */; };
-		9DFC28B82A90D249006E6741 /* TMDB_User_Accesses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFC28B72A90D249006E6741 /* TMDB_User_Accesses.framework */; };
-		9DFC28BA2A90D249006E6741 /* TMDB_User_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFC28B92A90D249006E6741 /* TMDB_User_Core.framework */; };
-		9DFC28BC2A90D249006E6741 /* TMDB_User_Hosting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFC28BB2A90D249006E6741 /* TMDB_User_Hosting.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,9 +142,12 @@
 			files = (
 				9DFC28632A905991006E6741 /* TMDB_Movies_Core.framework in Embed Frameworks */,
 				9DFC285D2A905989006E6741 /* Infrastructure_HttpClient_Curl.framework in Embed Frameworks */,
+				9D6BF9022A921EFD00408A85 /* TMDB_User_Accesses.framework in Embed Frameworks */,
 				9D2E0FF02A87743A00E17215 /* Infrastructure_HttpClient_Hosting.framework in Embed Frameworks */,
 				9DFC285B2A90597B006E6741 /* Infrastructure_DataStorage.framework in Embed Frameworks */,
+				9D6BF9042A921EFF00408A85 /* TMDB_User_Core.framework in Embed Frameworks */,
 				9DFC28592A905979006E6741 /* Infrastructure_DataStorage_RealmSwift.framework in Embed Frameworks */,
+				9D6BF9062A921F0100408A85 /* TMDB_User_Hosting.framework in Embed Frameworks */,
 				9D9EDEBA2A888F2800BBDE7D /* TMDB_Movies_Hosting.framework in Embed Frameworks */,
 				9D2E0F8B2A87701700E17215 /* Infrastructure_Hosting.framework in Embed Frameworks */,
 				9DFC28612A90598F006E6741 /* TMDB_Movies_Accesses.framework in Embed Frameworks */,
@@ -193,6 +200,13 @@
 		9D6BF8E62A91B93B00408A85 /* TMDB_User_Accesses.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TMDB_User_Accesses.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D6BF8E82A91B93B00408A85 /* TMDB_User_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TMDB_User_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D6BF8EA2A91B93B00408A85 /* TMDB_User_Hosting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TMDB_User_Hosting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D6BF8ED2A91DC2A00408A85 /* FavoriteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListViewController.swift; sourceTree = "<group>"; };
+		9D6BF8EF2A91DC3800408A85 /* FavoriteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListViewModel.swift; sourceTree = "<group>"; };
+		9D6BF8F12A91DC4500408A85 /* FavoriteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListView.swift; sourceTree = "<group>"; };
+		9D6BF8F52A91DD2500408A85 /* ToggleFavorButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleFavorButtonViewModel.swift; sourceTree = "<group>"; };
+		9D6BF8FB2A921DE900408A85 /* TMDB_User_Accesses.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TMDB_User_Accesses.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D6BF8FD2A921DE900408A85 /* TMDB_User_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TMDB_User_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D6BF8FF2A921DE900408A85 /* TMDB_User_Hosting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TMDB_User_Hosting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9EDD972A879CD800BBDE7D /* Infrastructure_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Infrastructure_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9EDDA42A879F2D00BBDE7D /* Infrastructure_DataStorage_Hosting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Infrastructure_DataStorage_Hosting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9EDDAB2A87F41900BBDE7D /* ApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -276,12 +290,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D6BF8E12A91B93000408A85 /* TMDB_User_Accesses.framework in Frameworks */,
-				9D6BF8E32A91B93000408A85 /* TMDB_User_Core.framework in Frameworks */,
-				9D6BF8E52A91B93000408A85 /* TMDB_User_Hosting.framework in Frameworks */,
-				9DFC28B82A90D249006E6741 /* TMDB_User_Accesses.framework in Frameworks */,
-				9DFC28BA2A90D249006E6741 /* TMDB_User_Core.framework in Frameworks */,
-				9DFC28BC2A90D249006E6741 /* TMDB_User_Hosting.framework in Frameworks */,
 				9D35D9762A88BAAC004AF453 /* Infrastructure_Core.framework in Frameworks */,
 				9D35D97E2A88BAAC004AF453 /* Infrastructure_Hosting.framework in Frameworks */,
 				9DFC285E2A90598C006E6741 /* Infrastructure_HttpClient.framework in Frameworks */,
@@ -290,11 +298,14 @@
 				9DFC285A2A90597B006E6741 /* Infrastructure_DataStorage.framework in Frameworks */,
 				9D35D97A2A88BAAC004AF453 /* Infrastructure_DataStorage_Hosting.framework in Frameworks */,
 				9DFC28582A905979006E6741 /* Infrastructure_DataStorage_RealmSwift.framework in Frameworks */,
+				9D6BF9012A921EFD00408A85 /* TMDB_User_Accesses.framework in Frameworks */,
 				9DFC28622A905991006E6741 /* TMDB_Movies_Core.framework in Frameworks */,
 				9D35D98A2A88BAAC004AF453 /* TMDB_Movies_Hosting.framework in Frameworks */,
 				9DFC28602A90598F006E6741 /* TMDB_Movies_Accesses.framework in Frameworks */,
+				9D6BF9032A921EFF00408A85 /* TMDB_User_Core.framework in Frameworks */,
 				9D9EDDCA2A87F6A600BBDE7D /* IQKeyboardManagerSwift in Frameworks */,
 				9D9EDDC72A87F67300BBDE7D /* Kingfisher in Frameworks */,
+				9D6BF9052A921F0100408A85 /* TMDB_User_Hosting.framework in Frameworks */,
 				9D9EDDC42A87F63100BBDE7D /* TinyConstraints in Frameworks */,
 				9DFC28032A8B82C7006E6741 /* KeychainAccess in Frameworks */,
 			);
@@ -304,9 +315,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D6BF8E72A91B93B00408A85 /* TMDB_User_Accesses.framework in Frameworks */,
-				9D6BF8E92A91B93B00408A85 /* TMDB_User_Core.framework in Frameworks */,
-				9D6BF8EB2A91B93B00408A85 /* TMDB_User_Hosting.framework in Frameworks */,
 				9DFC28432A90589D006E6741 /* Infrastructure_Core.framework in Frameworks */,
 				9DFC28452A90589D006E6741 /* Infrastructure_DataStorage.framework in Frameworks */,
 				9DFC28472A90589D006E6741 /* Infrastructure_DataStorage_Hosting.framework in Frameworks */,
@@ -318,6 +326,9 @@
 				9DFC28532A90589D006E6741 /* TMDB_Movies_Accesses.framework in Frameworks */,
 				9DFC28552A90589D006E6741 /* TMDB_Movies_Core.framework in Frameworks */,
 				9DFC28572A90589D006E6741 /* TMDB_Movies_Hosting.framework in Frameworks */,
+				9D6BF8E92A91B93B00408A85 /* TMDB_User_Core.framework in Frameworks */,
+				9D6BF8EB2A91B93B00408A85 /* TMDB_User_Hosting.framework in Frameworks */,
+				9D6BF8E72A91B93B00408A85 /* TMDB_User_Accesses.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +338,9 @@
 		9D2E0F882A87701700E17215 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9D6BF8FB2A921DE900408A85 /* TMDB_User_Accesses.framework */,
+				9D6BF8FD2A921DE900408A85 /* TMDB_User_Core.framework */,
+				9D6BF8FF2A921DE900408A85 /* TMDB_User_Hosting.framework */,
 				9D6BF8E62A91B93B00408A85 /* TMDB_User_Accesses.framework */,
 				9D6BF8E82A91B93B00408A85 /* TMDB_User_Core.framework */,
 				9D6BF8EA2A91B93B00408A85 /* TMDB_User_Hosting.framework */,
@@ -430,6 +444,45 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
+		9D6BF8EC2A91DAD200408A85 /* FavoriteList */ = {
+			isa = PBXGroup;
+			children = (
+				9D6BF8F12A91DC4500408A85 /* FavoriteListView.swift */,
+				9D6BF8EF2A91DC3800408A85 /* FavoriteListViewModel.swift */,
+				9D6BF8ED2A91DC2A00408A85 /* FavoriteListViewController.swift */,
+			);
+			path = FavoriteList;
+			sourceTree = "<group>";
+		};
+		9D6BF8F32A91DCB000408A85 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9D6BF8F72A91FE5400408A85 /* MovieCard */,
+				9D6BF8F42A91DCC500408A85 /* FavorButton */,
+				9DFC286F2A90B70E006E6741 /* KFImageContainer */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9D6BF8F42A91DCC500408A85 /* FavorButton */ = {
+			isa = PBXGroup;
+			children = (
+				9DFC28752A90C83C006E6741 /* ToggleFavorButton.swift */,
+				9D6BF8F52A91DD2500408A85 /* ToggleFavorButtonViewModel.swift */,
+			);
+			path = FavorButton;
+			sourceTree = "<group>";
+		};
+		9D6BF8F72A91FE5400408A85 /* MovieCard */ = {
+			isa = PBXGroup;
+			children = (
+				9DFC28392A8F3BEE006E6741 /* MovieCardCell.swift */,
+				9DFC280E2A8CD83E006E6741 /* MovieCardView.swift */,
+				9DFC28102A8CDB85006E6741 /* MovieCardViewModel.swift */,
+			);
+			path = MovieCard;
+			sourceTree = "<group>";
+		};
 		9D9EDDAC2A87F41900BBDE7D /* ApplicationTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -467,7 +520,6 @@
 			isa = PBXGroup;
 			children = (
 				9DFC28722A90C6A2006E6741 /* ToggleButton */,
-				9DFC286F2A90B70E006E6741 /* KFImageContainer */,
 				9DFC28152A8CE944006E6741 /* RoundShadow */,
 				9D9EDDCE2A87F71200BBDE7D /* LoadingView */,
 				9DFC286A2A90B1FB006E6741 /* ScrollableStackView */,
@@ -539,6 +591,8 @@
 		9D9EDE0D2A88790A00BBDE7D /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				9D6BF8F32A91DCB000408A85 /* Views */,
+				9D6BF8EC2A91DAD200408A85 /* FavoriteList */,
 				9DFC283D2A90482F006E6741 /* MovieDetail */,
 				9DFC28042A8B82F3006E6741 /* NowPlaying */,
 				9D3C872C2A8633490097AFF4 /* RootViewController.swift */,
@@ -565,7 +619,6 @@
 		9DFC28042A8B82F3006E6741 /* NowPlaying */ = {
 			isa = PBXGroup;
 			children = (
-				9DFC28132A8CE23D006E6741 /* Views */,
 				9DFC28092A8B843A006E6741 /* NowPlayingView.swift */,
 				9DFC28072A8B8422006E6741 /* NowPlayingViewModel.swift */,
 				9DFC28052A8B83AC006E6741 /* NowPlayingViewController.swift */,
@@ -579,16 +632,6 @@
 				9DFC280C2A8B85B4006E6741 /* AsyncHelper.swift */,
 			);
 			path = Helper;
-			sourceTree = "<group>";
-		};
-		9DFC28132A8CE23D006E6741 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				9DFC28392A8F3BEE006E6741 /* MovieCardCell.swift */,
-				9DFC280E2A8CD83E006E6741 /* MovieCardView.swift */,
-				9DFC28102A8CDB85006E6741 /* MovieCardViewModel.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		9DFC28152A8CE944006E6741 /* RoundShadow */ = {
@@ -640,7 +683,6 @@
 			isa = PBXGroup;
 			children = (
 				9DFC28732A90C6BC006E6741 /* ToggleButton.swift */,
-				9DFC28752A90C83C006E6741 /* ToggleFavorButton.swift */,
 			);
 			path = ToggleButton;
 			sourceTree = "<group>";
@@ -789,6 +831,7 @@
 				9D9EDDD02A87F73700BBDE7D /* LoadingView.swift in Sources */,
 				9DFC283C2A8F5471006E6741 /* UIImage+Resized.swift in Sources */,
 				9DFC286E2A90B22F006E6741 /* SrollableStackView+QuickAdd.swift in Sources */,
+				9D6BF8EE2A91DC2A00408A85 /* FavoriteListViewController.swift in Sources */,
 				9D9EDDF42A87F91500BBDE7D /* UISegmentedControl+Apperance.swift in Sources */,
 				9D9EDDE22A87F82100BBDE7D /* UIColor+Hex.swift in Sources */,
 				9DFC28742A90C6BC006E6741 /* ToggleButton.swift in Sources */,
@@ -804,13 +847,16 @@
 				9D9EDDF12A87F91500BBDE7D /* UINavigationController+Appearance.swift in Sources */,
 				9DFC28112A8CDB85006E6741 /* MovieCardViewModel.swift in Sources */,
 				9D9EDE022A87FF4B00BBDE7D /* UIView+fixedConstraint.swift in Sources */,
+				9D6BF8F22A91DC4500408A85 /* FavoriteListView.swift in Sources */,
 				9D9EDDE82A87F82100BBDE7D /* UIApplication+RootViewController.swift in Sources */,
 				9DFC28062A8B83AC006E6741 /* NowPlayingViewController.swift in Sources */,
 				9D35D98D2A89B36C004AF453 /* ContextFactoryRegister.swift in Sources */,
 				9DFC28222A8E25CC006E6741 /* Date+Calendar.swift in Sources */,
+				9D6BF8F02A91DC3800408A85 /* FavoriteListViewModel.swift in Sources */,
 				9D9EDDF22A87F91500BBDE7D /* UINavigationController+PushViewController.swift in Sources */,
 				9D9EDE032A87FF4B00BBDE7D /* UIViewController+PushViewController.swift in Sources */,
 				9D9EDDE32A87F82100BBDE7D /* UIFont+Theme.swift in Sources */,
+				9D6BF8F62A91DD2500408A85 /* ToggleFavorButtonViewModel.swift in Sources */,
 				9D9EDDDE2A87F82100BBDE7D /* Double+ZeroFractoin.swift in Sources */,
 				9DFC28672A906F42006E6741 /* MovieDetailViewModel.swift in Sources */,
 				9D9EDDE42A87F82100BBDE7D /* Optional+IsNil.swift in Sources */,

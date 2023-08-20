@@ -95,6 +95,8 @@ extension SYBarButton {
         
         case search
         
+        case favor
+        
         case image(value: UIImage?)
         
         case text(value: String)
@@ -112,8 +114,10 @@ extension SYBarButton {
                 return CGSize(width: 50.0, height: 28.0)
             case .textGreen(_):
                 return CGSize(width: 50.0, height: 28.0)
-            case .back, .foward:
+            case .back, .foward, .image(value: _):
                 return CGSize(width: 23, height: 28)
+            case .favor:
+                return CGSize(width: 32, height: 28)
             default:
                 return CGSize(width: 28.0, height: 28.0)
             }
@@ -135,6 +139,8 @@ extension SYBarButton {
                 return createSymbolImage(by: "gearshape")
             case .search:
                 return createSymbolImage(by: "magnifyingglass")
+            case .favor:
+                return createSymbolImage(by: "heart")
             case .image(let value):
                 return value
             default:

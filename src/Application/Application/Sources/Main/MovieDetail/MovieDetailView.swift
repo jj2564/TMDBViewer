@@ -27,9 +27,7 @@ class MovieDetailView: BaseView<MovieDetailViewModel> {
     override func setupViewModel() {
         updateView()
         
-        viewModel.updateFavorite = { [weak self] isFavor in
-            self?.favorButton.isSelected = isFavor
-        }
+        favorButton.viewModel = viewModel.favorButtonViewModel
     }
     
     override func updateView() {
@@ -61,18 +59,9 @@ class MovieDetailView: BaseView<MovieDetailViewModel> {
         
         infoView.addSubview(favorButton)
         favorButton.centerInSuperview()
-        favorButton.addTarget(self, action: #selector(didTappedFavorButton(_:)), for: .touchUpInside)
+
     }
     
-    @objc private func didTappedFavorButton(_ sender: UIButton) {
-        
-        if sender.isSelected {
-            viewModel.deleteFavor()
-        } else {
-            viewModel.addFavor()
-        }
-        
-    }
     
 }
 

@@ -20,8 +20,7 @@ open class HttpClient {
     public required init(httpClientProvider: HttpClientProvider) {
         self.httpClientProvider = httpClientProvider
         
-        iso8601Formatter.formatOptions = [.withFullDate]
-        iso8601FormatterFull.formatOptions = [.withColonSeparatorInTime]
+        customFormatter.dateFormat = "yyyy-MM-dd"
     }
     
     

@@ -26,9 +26,21 @@ class ToggleFavorButton: ToggleButton {
     
     
     //MARK: - Properties
+    public var viewModel = ToggleFavorButtonViewModel() {
+        didSet { setupViewModel() }
+    }
     
     
     //MARK: - Methods
+    public func setupViewModel() {
+        
+        viewModel.updateFavorite = { [weak self] isFavor in
+            self?.isSelected = isFavor
+            self?.isEnabled = true
+        }
+        
+    }
+    
     private func setupView() {
         
         let noFavor = UIImage(systemName: "heart", withConfiguration: UIImage.SymbolConfiguration(pointSize: 42, weight: .regular))
@@ -42,6 +54,20 @@ class ToggleFavorButton: ToggleButton {
         
         height(50)
         width(60)
+        
+        isEnabled = false
+        
+        addTarget(self, action: #selector(didTappedFavorButton(_:)), for: .touchUpInside)
+    }
+    
+    @objc private func didTappedFavorButton(_ sender: UIButton) {
+        
+        if isSelected {
+            viewModel.deleteFavor()
+        } else {
+            viewModel.addFavor()
+        }
+        
     }
     
 }

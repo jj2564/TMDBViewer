@@ -41,6 +41,7 @@
 		9D2E10522A877F8900E17215 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		9D2E10532A877F8900E17215 /* RealmBasicDataStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmBasicDataStorage.swift; sourceTree = "<group>"; };
 		9D2E10782A878EE600E17215 /* Infrastructure_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Infrastructure_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D6BF8F82A921D6E00408A85 /* Infrastructure_HttpClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Infrastructure_HttpClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +89,7 @@
 		9D2E10392A877DBB00E17215 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9D6BF8F82A921D6E00408A85 /* Infrastructure_HttpClient.framework */,
 				9D2E10782A878EE600E17215 /* Infrastructure_Core.framework */,
 				9D2E103A2A877DBB00E17215 /* Infrastructure_DataStorage.framework */,
 			);

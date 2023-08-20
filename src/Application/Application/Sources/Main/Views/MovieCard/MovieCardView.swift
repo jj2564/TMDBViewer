@@ -44,12 +44,12 @@ class MovieCardView: BaseView<MovieCardViewModel> {
         
         kfImageView.imageUrlString = viewModel.imageUrl
         
-        nameLabel.text = viewModel.name
+        nameLabel.text = viewModel.name ?? "***"
         
         let dateText = viewModel.date?.dateString
-        dateLabel.text = dateText
+        dateLabel.text = dateText ?? "****-**-**"
         
-        summaryLabel.text = viewModel.summary
+        summaryLabel.text = viewModel.summary ?? "*****"
         
     }
     
