@@ -12,10 +12,10 @@ import Infrastructure_Core
 
 public typealias JSONDictionary = [String: Any]
 
+let iso8601Formatter = ISO8601DateFormatter()
+let iso8601FormatterFull = ISO8601DateFormatter()
 
 public let refreshDay: Int = 1
-
-let customFormatter = DateFormatter()
 
 public let headers: HttpHeaders = [
     "Content-Type": "application/json",
@@ -27,16 +27,35 @@ public let headers: HttpHeaders = [
 public func newJSONDecoder() -> JSONDecoder {
     let decoder = JSONDecoder()
     
-    customFormatter.dateFormat = "yyyy-MM-dd"
-    
-    decoder.dateDecodingStrategy = .formatted(customFormatter)
+    decoder.dateDecodingStrategy = .custom { decoder -> Date in
+        let container = try decoder.singleValueContainer()
+        let dateString = try container.decode(String.self)
+        
+        if let date = iso8601FormatterFull.date(from: dateString) {
+            return date
+        } else if let date = iso8601Formatter.date(from: dateString) { // 尝试使用第二个格式化器
+            return date
+        } else {
+            throw DecodingError.dataCorruptedError(in: container, debugDescription: "Cannot decode date string: \(dateString)")
+        }
+    }
     decoder.keyDecodingStrategy = .convertFromSnakeCase
     return decoder
 }
 
 public func newJSONEncoder() -> JSONEncoder {
     let encoder = JSONEncoder()
-    encoder.dateEncodingStrategy = .iso8601
+    
+    let iso8601Formatter = ISO8601DateFormatter()
+    iso8601Formatter.formatOptions = [.withFullDate]
+    
+    encoder.dateEncodingStrategy = .custom { date, encoder in
+        var container = encoder.singleValueContainer()
+        let dateString = iso8601Formatter.string(from: date)
+        try container.encode(dateString)
+    }
+    
+    encoder.keyEncodingStrategy = .convertToSnakeCase
     return encoder
 }
 

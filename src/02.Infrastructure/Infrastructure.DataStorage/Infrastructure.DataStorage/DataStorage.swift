@@ -29,6 +29,18 @@ public class DataStorage {
         try dataStorageProvider.set(datas)
     }
     
+    public func delete(by key: String) throws {
+        try dataStorageProvider.delete(by: key)
+    }
+    
+    public func delete(by keys: [String]) throws {
+        try dataStorageProvider.delete(by: keys)
+    }
+    
+    public func fetchAll(by type: String) throws -> [Data] {
+        try dataStorageProvider.fetchAll(by: type)
+    }
+    
     public func fetch(by key: String, isValid: Bool = true) throws -> Data {
         try dataStorageProvider.fetch(by: key, isValid: isValid)
     }

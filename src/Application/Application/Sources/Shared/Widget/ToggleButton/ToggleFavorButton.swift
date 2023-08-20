@@ -31,8 +31,8 @@ class ToggleFavorButton: ToggleButton {
     //MARK: - Methods
     private func setupView() {
         
-        let noFavor = UIImage(systemName: "heart", withConfiguration: UIImage.SymbolConfiguration(pointSize: 42, weight: .bold))
-        let isFavor = UIImage(systemName: "heart.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 42, weight: .bold))
+        let noFavor = UIImage(systemName: "heart", withConfiguration: UIImage.SymbolConfiguration(pointSize: 42, weight: .regular))
+        let isFavor = UIImage(systemName: "heart.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 42, weight: .regular))
         
         normalImage = noFavor
         selectedImage = isFavor

@@ -13,6 +13,12 @@ public protocol DataStorageProvider {
     
     func set(_ datas: [BasicDataStorage]) throws
     
+    func delete(by key: String) throws
+    
+    func delete(by keys: [String]) throws
+    
+    func fetchAll(by type: String) throws -> [Data]
+    
     func fetch(by key: String, isValid: Bool) throws -> Data
     
     func fetch(by keys: [String], isValid: Bool) throws -> [Data]

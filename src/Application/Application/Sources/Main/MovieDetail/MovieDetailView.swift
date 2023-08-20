@@ -26,6 +26,10 @@ class MovieDetailView: BaseView<MovieDetailViewModel> {
     
     override func setupViewModel() {
         updateView()
+        
+        viewModel.updateFavorite = { [weak self] isFavor in
+            self?.favorButton.isSelected = isFavor
+        }
     }
     
     override func updateView() {
@@ -61,7 +65,13 @@ class MovieDetailView: BaseView<MovieDetailViewModel> {
     }
     
     @objc private func didTappedFavorButton(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
+        
+        if sender.isSelected {
+            viewModel.deleteFavor()
+        } else {
+            viewModel.addFavor()
+        }
+        
     }
     
 }

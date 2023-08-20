@@ -14,6 +14,7 @@ import Infrastructure_DataStorage
 
 public class RealmDataStorageProvider: DataStorageProvider {
     
+    
 
     //MARK: - Properties
     private let manager = RealmManager()
@@ -38,16 +39,50 @@ public class RealmDataStorageProvider: DataStorageProvider {
         manager.add(objects)
     }
     
+    public func delete(by key: String) throws {
+        manager.delete(RealmBasicDataStorage.self, key: key)
+    }
+    
+    public func delete(by keys: [String]) throws {
+        manager.delete(RealmBasicDataStorage.self, keys: keys)
+    }
+    
+    public func fetchAll(by format: String) throws -> [Data] {
+        
+        let predicate: NSPredicate = NSPredicate(format: "format = %@", format)
+        
+        guard let objects = manager.objects(RealmBasicDataStorage.self, predicate: predicate) else {
+            return []
+        }
+        
+        var datas: [Data] = []
+        
+        for object in objects {
+            datas.append(object.data)
+        }
+        
+        return datas
+    }
+    
     public func fetch(by key: String, isValid: Bool) throws -> Data {
-        guard let object = manager.object(RealmBasicDataStorage.self, key: key) else {
-            throw "無物件"
-        }
+//
+//        let predicate: NSPredicate = NSPredicate(format: "key = %@", key)
+//
+//        guard let objects = manager.objects(RealmBasicDataStorage.self, predicate: predicate) else {
+//            throw "無資料"
+//        }
+//
+//        guard let object = objects.first else { throw "無資料" }
+//
+//        if object.validDate <= Date(), isValid {
+//            throw "物件已過時"
+//        }
+//
+        let datas = try fetch(by: [key], isValid: isValid)
         
-        if object.validDate <= Date(), isValid {
-            throw "物件已過時"
-        }
+        guard let data = datas.first else { throw "無資料" }
         
-        return object.data
+        return data
         
     }
     
@@ -73,7 +108,7 @@ public class RealmDataStorageProvider: DataStorageProvider {
     }
     
     private func realmBasic(by data: BasicDataStorage) -> RealmBasicDataStorage {
-        RealmBasicDataStorage(key: data.key, data: data.data, validDate: data.validDate)
+        RealmBasicDataStorage(key: data.key, data: data.data, format: data.format, validDate: data.validDate)
     }
     
 }

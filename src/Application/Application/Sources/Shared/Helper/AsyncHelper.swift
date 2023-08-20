@@ -78,7 +78,7 @@ class AsyncHelper {
         
         if let actionError = actionError {
             error(actionError)
-
+            print(actionError)
         }
 
         if let netError = actionError as? HttpError {

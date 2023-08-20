@@ -21,6 +21,12 @@
 		9D35D98D2A89B36C004AF453 /* ContextFactoryRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D35D98C2A89B36C004AF453 /* ContextFactoryRegister.swift */; };
 		9D3C87352A8633490097AFF4 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C872C2A8633490097AFF4 /* RootViewController.swift */; };
 		9D3C87392A8633490097AFF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C87322A8633490097AFF4 /* AppDelegate.swift */; };
+		9D6BF8E12A91B93000408A85 /* TMDB_User_Accesses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6BF8E02A91B93000408A85 /* TMDB_User_Accesses.framework */; };
+		9D6BF8E32A91B93000408A85 /* TMDB_User_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6BF8E22A91B93000408A85 /* TMDB_User_Core.framework */; };
+		9D6BF8E52A91B93000408A85 /* TMDB_User_Hosting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6BF8E42A91B93000408A85 /* TMDB_User_Hosting.framework */; };
+		9D6BF8E72A91B93B00408A85 /* TMDB_User_Accesses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6BF8E62A91B93B00408A85 /* TMDB_User_Accesses.framework */; };
+		9D6BF8E92A91B93B00408A85 /* TMDB_User_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6BF8E82A91B93B00408A85 /* TMDB_User_Core.framework */; };
+		9D6BF8EB2A91B93B00408A85 /* TMDB_User_Hosting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6BF8EA2A91B93B00408A85 /* TMDB_User_Hosting.framework */; };
 		9D9EDD992A879CD800BBDE7D /* Infrastructure_Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9EDD972A879CD800BBDE7D /* Infrastructure_Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9D9EDDA62A879F2D00BBDE7D /* Infrastructure_DataStorage_Hosting.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9EDDA42A879F2D00BBDE7D /* Infrastructure_DataStorage_Hosting.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9D9EDDAE2A87F41900BBDE7D /* ApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9EDDAD2A87F41900BBDE7D /* ApplicationTests.swift */; };
@@ -108,6 +114,9 @@
 		9DFC28712A90B724006E6741 /* KFImageContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC28702A90B724006E6741 /* KFImageContainerView.swift */; };
 		9DFC28742A90C6BC006E6741 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC28732A90C6BC006E6741 /* ToggleButton.swift */; };
 		9DFC28762A90C83C006E6741 /* ToggleFavorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC28752A90C83C006E6741 /* ToggleFavorButton.swift */; };
+		9DFC28B82A90D249006E6741 /* TMDB_User_Accesses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFC28B72A90D249006E6741 /* TMDB_User_Accesses.framework */; };
+		9DFC28BA2A90D249006E6741 /* TMDB_User_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFC28B92A90D249006E6741 /* TMDB_User_Core.framework */; };
+		9DFC28BC2A90D249006E6741 /* TMDB_User_Hosting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFC28BB2A90D249006E6741 /* TMDB_User_Hosting.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,6 +187,12 @@
 		9D3C87322A8633490097AFF4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D3C873E2A8635160097AFF4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 		9D3C87402A8635310097AFF4 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
+		9D6BF8E02A91B93000408A85 /* TMDB_User_Accesses.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TMDB_User_Accesses.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D6BF8E22A91B93000408A85 /* TMDB_User_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TMDB_User_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D6BF8E42A91B93000408A85 /* TMDB_User_Hosting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TMDB_User_Hosting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D6BF8E62A91B93B00408A85 /* TMDB_User_Accesses.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TMDB_User_Accesses.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D6BF8E82A91B93B00408A85 /* TMDB_User_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TMDB_User_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D6BF8EA2A91B93B00408A85 /* TMDB_User_Hosting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TMDB_User_Hosting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9EDD972A879CD800BBDE7D /* Infrastructure_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Infrastructure_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9EDDA42A879F2D00BBDE7D /* Infrastructure_DataStorage_Hosting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Infrastructure_DataStorage_Hosting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9EDDAB2A87F41900BBDE7D /* ApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -251,6 +266,9 @@
 		9DFC28702A90B724006E6741 /* KFImageContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KFImageContainerView.swift; sourceTree = "<group>"; };
 		9DFC28732A90C6BC006E6741 /* ToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
 		9DFC28752A90C83C006E6741 /* ToggleFavorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleFavorButton.swift; sourceTree = "<group>"; };
+		9DFC28B72A90D249006E6741 /* TMDB_User_Accesses.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TMDB_User_Accesses.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DFC28B92A90D249006E6741 /* TMDB_User_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TMDB_User_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DFC28BB2A90D249006E6741 /* TMDB_User_Hosting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TMDB_User_Hosting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +276,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D6BF8E12A91B93000408A85 /* TMDB_User_Accesses.framework in Frameworks */,
+				9D6BF8E32A91B93000408A85 /* TMDB_User_Core.framework in Frameworks */,
+				9D6BF8E52A91B93000408A85 /* TMDB_User_Hosting.framework in Frameworks */,
+				9DFC28B82A90D249006E6741 /* TMDB_User_Accesses.framework in Frameworks */,
+				9DFC28BA2A90D249006E6741 /* TMDB_User_Core.framework in Frameworks */,
+				9DFC28BC2A90D249006E6741 /* TMDB_User_Hosting.framework in Frameworks */,
 				9D35D9762A88BAAC004AF453 /* Infrastructure_Core.framework in Frameworks */,
 				9D35D97E2A88BAAC004AF453 /* Infrastructure_Hosting.framework in Frameworks */,
 				9DFC285E2A90598C006E6741 /* Infrastructure_HttpClient.framework in Frameworks */,
@@ -280,6 +304,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D6BF8E72A91B93B00408A85 /* TMDB_User_Accesses.framework in Frameworks */,
+				9D6BF8E92A91B93B00408A85 /* TMDB_User_Core.framework in Frameworks */,
+				9D6BF8EB2A91B93B00408A85 /* TMDB_User_Hosting.framework in Frameworks */,
 				9DFC28432A90589D006E6741 /* Infrastructure_Core.framework in Frameworks */,
 				9DFC28452A90589D006E6741 /* Infrastructure_DataStorage.framework in Frameworks */,
 				9DFC28472A90589D006E6741 /* Infrastructure_DataStorage_Hosting.framework in Frameworks */,
@@ -300,6 +327,15 @@
 		9D2E0F882A87701700E17215 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9D6BF8E62A91B93B00408A85 /* TMDB_User_Accesses.framework */,
+				9D6BF8E82A91B93B00408A85 /* TMDB_User_Core.framework */,
+				9D6BF8EA2A91B93B00408A85 /* TMDB_User_Hosting.framework */,
+				9D6BF8E02A91B93000408A85 /* TMDB_User_Accesses.framework */,
+				9D6BF8E22A91B93000408A85 /* TMDB_User_Core.framework */,
+				9D6BF8E42A91B93000408A85 /* TMDB_User_Hosting.framework */,
+				9DFC28B72A90D249006E6741 /* TMDB_User_Accesses.framework */,
+				9DFC28B92A90D249006E6741 /* TMDB_User_Core.framework */,
+				9DFC28BB2A90D249006E6741 /* TMDB_User_Hosting.framework */,
 				9DFC28422A90589D006E6741 /* Infrastructure_Core.framework */,
 				9DFC28442A90589D006E6741 /* Infrastructure_DataStorage.framework */,
 				9DFC28462A90589D006E6741 /* Infrastructure_DataStorage_Hosting.framework */,

@@ -15,6 +15,7 @@ import Infrastructure_DataStorage_Hosting
 
 // Application
 import TMDB_Movies_Hosting
+import TMDB_User_Hosting
 
 class ContextFactoryRegister {
     
@@ -28,6 +29,7 @@ class ContextFactoryRegister {
         
         // Application
         HostContext.current.registerFactory(factory: MoviesContextFactory(), isSingle: false)
+        HostContext.current.registerFactory(factory: UserContextFactory(), isSingle: false)
         
         
     }

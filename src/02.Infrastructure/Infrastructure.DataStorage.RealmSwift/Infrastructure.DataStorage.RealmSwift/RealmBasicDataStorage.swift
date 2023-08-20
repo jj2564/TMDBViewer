@@ -11,12 +11,14 @@ class RealmBasicDataStorage: Object {
 
     @Persisted(primaryKey: true) var key: String!
     @Persisted var data: Data!
+    @Persisted var format: String!
     @Persisted var validDate: Date!
 
-    convenience init(key: String, data: Data, validDate: Date) {
+    convenience init(key: String, data: Data, format: String, validDate: Date) {
         self.init()
         self.key = key
         self.data = data
+        self.format = format
         self.validDate = validDate
     }
 

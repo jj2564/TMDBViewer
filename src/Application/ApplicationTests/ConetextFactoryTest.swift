@@ -13,6 +13,7 @@ import Infrastructure_HttpClient
 import Infrastructure_DataStorage
 
 import TMDB_Movies_Core
+import TMDB_User_Core
 
 
 @testable import Application
@@ -41,6 +42,9 @@ class ContextFactoryTest: XCTestCase {
         
         let moviesContext: MoviesContext? = HostContext.current.getService()
         XCTAssertNotNil(moviesContext, "Failed to get the MoviesContext")
+        
+        let userContext: UserContext? = HostContext.current.getService()
+        XCTAssertNotNil(userContext, "Failed to get the UserContext")
         
     }
     

@@ -8,6 +8,15 @@
       location = "container:"
       name = "01.Application">
       <FileRef
+         location = "group:../01.Application/TMDB.User.Core/TMDB.User.Core.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../01.Application/TMDB.User.Hosting/TMDB.User.Hosting.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:../01.Application/TMDB.User.Accesses/TMDB.User.Accesses.xcodeproj">
+      </FileRef>
+      <FileRef
          location = "group:../01.Application/TMDB.Movies.Core/TMDB.Movies.Core.xcodeproj">
       </FileRef>
       <FileRef

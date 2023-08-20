@@ -61,6 +61,25 @@ class RealmManager {
         
     }
     
+    func delete<T: Object>(_ type: T.Type, key: Any) {
+        delete(type, keys: [key])
+    }
+    
+    func delete<T: Object>(_ type: T.Type, keys: [Any]) {
+        guard let realm = self.realm else { return }
+        realm.refresh()
+        
+        let deleteList = keys.compactMap { realm.object(ofType: type, forPrimaryKey: $0) }
+        if realm.isInWriteTransaction {
+            realm.delete(deleteList)
+        } else {
+            try? realm.write {
+                realm.delete(deleteList)
+            }
+        }
+        
+    }
+    
     func runTransaction(action: () -> Void) {
         
         guard let realm = self.realm else { return }
