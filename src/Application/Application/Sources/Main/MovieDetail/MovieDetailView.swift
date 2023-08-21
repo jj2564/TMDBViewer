@@ -32,6 +32,7 @@ class MovieDetailView: BaseView<MovieDetailViewModel> {
     
     override func updateView() {
         kfImageView.imageUrlString = viewModel.mainImageUrl
+        kfImageView.movieId = viewModel.movie?.id
     }
     
     

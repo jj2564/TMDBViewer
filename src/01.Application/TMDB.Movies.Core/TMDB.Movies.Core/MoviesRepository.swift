@@ -11,14 +11,20 @@ public protocol MoviesRepository {
     
     
     //MARK: - Method
-    func findPlayingList(by page: Int) throws -> NowPlaying?
+    func findPlayingList(by page: Int) throws -> MovieListSummary?
     
     func findMovieDetail(by id: String) throws -> Movie?
+    
+    func find(by query: String) throws -> MovieListSummary?
+    
 }
 
 public extension MoviesRepository {
     
-    func findPlayingList(by page: Int) throws -> NowPlaying? { nil }
+    func findPlayingList(by page: Int) throws -> MovieListSummary? { nil }
     
     func findMovieDetail(by id: String) throws -> Movie? { nil }
+    
+    func find(by query: String) throws -> MovieListSummary? { nil }
+    
 }

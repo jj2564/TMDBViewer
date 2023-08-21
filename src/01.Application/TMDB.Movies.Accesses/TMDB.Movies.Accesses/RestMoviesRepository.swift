@@ -18,6 +18,7 @@ public class RestMoviesRepository: MoviesRepository {
     //MARK: - Fields
     private var httpClient: HttpClient?
     private let endpoint = "movie/"
+    private let language = "language=en-US"
     
     
     //MARK: - Constructors
@@ -27,15 +28,15 @@ public class RestMoviesRepository: MoviesRepository {
     
     
     //MARK: - Method
-    public func findPlayingList(by page: Int) throws -> NowPlaying? {
+    public func findPlayingList(by page: Int) throws -> MovieListSummary? {
         
         // create url
         guard let service = httpClient?.serviceUrl else { throw "URL Error" }
-        let url = service + endpoint + "now_playing?language=en-US&page=\(page)"
+        let url = service + endpoint + "now_playing?page=\(page)&" + language
         
         // respone
         let response = try getResponse(httpClient, url: url)
-        let result = try NowPlaying(data: response.content)
+        let result = try MovieListSummary(data: response.content)
         
         return result
     }
@@ -45,11 +46,24 @@ public class RestMoviesRepository: MoviesRepository {
         
         // create url
         guard let service = httpClient?.serviceUrl else { throw "URL Error" }
-        let url = service + endpoint + "\(id)?language=en-US"
+        let url = service + endpoint + "\(id)?" + language
         
         // respone
         let response = try getResponse(httpClient, url: url)
         let result = try Movie(data: response.content)
+        
+        return result
+    }
+    
+    public func find(by query: String) throws -> MovieListSummary? {
+        
+        // create url
+        guard let service = httpClient?.serviceUrl else { throw "URL Error" }
+        let url = service + "search/movie?" + language + "&" + "query=\(query)"
+        
+        // response
+        let response = try getResponse(httpClient, url: url)
+        let result = try MovieListSummary(data: response.content)
         
         return result
     }

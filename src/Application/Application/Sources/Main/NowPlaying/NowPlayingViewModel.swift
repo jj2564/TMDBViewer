@@ -16,7 +16,7 @@ class NowPlayingViewModel: BaseViewModel {
     //MARK: - Fields
     private let moviesContext: MoviesContext? = HostContext.current.getService()
     
-    private var nowPlaying: NowPlaying? = nil
+    private var nowPlaying: MovieListSummary? = nil
     
     private var loadedPage: Int = 0
     
@@ -82,7 +82,7 @@ class NowPlayingViewModel: BaseViewModel {
         
     }
     
-    private func figureResult(_ item: NowPlaying) {
+    private func figureResult(_ item: MovieListSummary) {
         
         movieList = movieList + (item.results ?? [])
     }

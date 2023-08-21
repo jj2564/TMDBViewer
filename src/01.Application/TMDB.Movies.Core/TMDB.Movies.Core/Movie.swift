@@ -100,21 +100,11 @@ public class Movie: Codable {
 public extension Movie {
     
     var landscpaeThumbnailUrl: String? {
-        getImageUrl(isPortrait: false, isThumb: true)
+        backdropPath?.getPhotoUrl(isThumb: true)
     }
     
     var landscapeOriginalUrl: String? {
-        getImageUrl(isPortrait: false, isThumb: false)
-    }
-    
-    private func getImageUrl(isPortrait: Bool, isThumb: Bool) -> String? {
-        
-        let imageBaseUrl = "https://image.tmdb.org/t/p/"
-        let name = isPortrait ? posterPath : backdropPath
-        let size  = isThumb ? "w342" : "original"
-        guard let name else { return nil }
-        return imageBaseUrl + size + name
-        
+        backdropPath?.getPhotoUrl(isThumb: false)
     }
     
 }

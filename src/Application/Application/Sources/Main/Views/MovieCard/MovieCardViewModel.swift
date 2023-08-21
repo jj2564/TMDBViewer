@@ -32,6 +32,7 @@ class MovieCardViewModel: BaseViewModel {
         didSet { updateValue() }
     }
     
+    public var movieId: Int? = nil
     public var imageUrl: String? = nil
     public var name: String? = nil
     public var date: Date? = nil
@@ -81,8 +82,9 @@ class MovieCardViewModel: BaseViewModel {
         name = movie?.originalTitle
         date = movie?.releaseDate
         summary = movie?.overview
+        movieId = movie?.id
         
-        favorButtonViewModel.movieId = movie?.id
+        favorButtonViewModel.movieId = movieId
     }
     
 }

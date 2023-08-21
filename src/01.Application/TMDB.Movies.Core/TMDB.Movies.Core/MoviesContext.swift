@@ -13,11 +13,14 @@ public class MoviesContext {
     
     //MARK: - Constructor
     public required init(
-        moviesRepository: MoviesRepository? = nil
+        moviesRepository: MoviesRepository? = nil,
+        photosRepository: PhotosRepository? = nil
     ) {
         self.moviesRepository = moviesRepository
+        self.photosRepository = photosRepository
     }
     
     public private(set) var moviesRepository: MoviesRepository?
+    public private(set) var photosRepository: PhotosRepository?
     
 }

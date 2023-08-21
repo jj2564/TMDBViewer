@@ -97,6 +97,8 @@ extension SYBarButton {
         
         case favor
         
+        case filter
+        
         case image(value: UIImage?)
         
         case text(value: String)
@@ -141,6 +143,8 @@ extension SYBarButton {
                 return createSymbolImage(by: "magnifyingglass")
             case .favor:
                 return createSymbolImage(by: "heart")
+            case .filter:
+                return createSymbolImage(by: "line.3.horizontal.decrease")
             case .image(let value):
                 return value
             default:

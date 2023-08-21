@@ -34,6 +34,12 @@
 		9D6BF9042A921EFF00408A85 /* TMDB_User_Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6BF8FD2A921DE900408A85 /* TMDB_User_Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9D6BF9052A921F0100408A85 /* TMDB_User_Hosting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6BF8FF2A921DE900408A85 /* TMDB_User_Hosting.framework */; };
 		9D6BF9062A921F0100408A85 /* TMDB_User_Hosting.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6BF8FF2A921DE900408A85 /* TMDB_User_Hosting.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9D6BF90B2A92355500408A85 /* SearchMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6BF90A2A92355500408A85 /* SearchMovieView.swift */; };
+		9D6BF90D2A92356300408A85 /* SearchMovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6BF90C2A92356300408A85 /* SearchMovieViewModel.swift */; };
+		9D6BF90F2A92357500408A85 /* SearchMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6BF90E2A92357500408A85 /* SearchMovieViewController.swift */; };
+		9D6BF9122A923C2400408A85 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6BF9112A923C2400408A85 /* SearchBarView.swift */; };
+		9D6BF9142A923D0300408A85 /* ClearButtonTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6BF9132A923D0300408A85 /* ClearButtonTextField.swift */; };
+		9D6BF9162A92F6F600408A85 /* KFImageContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6BF9152A92F6F600408A85 /* KFImageContainerViewModel.swift */; };
 		9D9EDD992A879CD800BBDE7D /* Infrastructure_Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9EDD972A879CD800BBDE7D /* Infrastructure_Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9D9EDDA62A879F2D00BBDE7D /* Infrastructure_DataStorage_Hosting.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9EDDA42A879F2D00BBDE7D /* Infrastructure_DataStorage_Hosting.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9D9EDDAE2A87F41900BBDE7D /* ApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9EDDAD2A87F41900BBDE7D /* ApplicationTests.swift */; };
@@ -207,6 +213,12 @@
 		9D6BF8FB2A921DE900408A85 /* TMDB_User_Accesses.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TMDB_User_Accesses.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D6BF8FD2A921DE900408A85 /* TMDB_User_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TMDB_User_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D6BF8FF2A921DE900408A85 /* TMDB_User_Hosting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TMDB_User_Hosting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D6BF90A2A92355500408A85 /* SearchMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieView.swift; sourceTree = "<group>"; };
+		9D6BF90C2A92356300408A85 /* SearchMovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieViewModel.swift; sourceTree = "<group>"; };
+		9D6BF90E2A92357500408A85 /* SearchMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieViewController.swift; sourceTree = "<group>"; };
+		9D6BF9112A923C2400408A85 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		9D6BF9132A923D0300408A85 /* ClearButtonTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButtonTextField.swift; sourceTree = "<group>"; };
+		9D6BF9152A92F6F600408A85 /* KFImageContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KFImageContainerViewModel.swift; sourceTree = "<group>"; };
 		9D9EDD972A879CD800BBDE7D /* Infrastructure_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Infrastructure_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9EDDA42A879F2D00BBDE7D /* Infrastructure_DataStorage_Hosting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Infrastructure_DataStorage_Hosting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9EDDAB2A87F41900BBDE7D /* ApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -457,6 +469,7 @@
 		9D6BF8F32A91DCB000408A85 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9D6BF9102A923C0200408A85 /* SearchBar */,
 				9D6BF8F72A91FE5400408A85 /* MovieCard */,
 				9D6BF8F42A91DCC500408A85 /* FavorButton */,
 				9DFC286F2A90B70E006E6741 /* KFImageContainer */,
@@ -481,6 +494,25 @@
 				9DFC28102A8CDB85006E6741 /* MovieCardViewModel.swift */,
 			);
 			path = MovieCard;
+			sourceTree = "<group>";
+		};
+		9D6BF9092A9234BD00408A85 /* SearchMovie */ = {
+			isa = PBXGroup;
+			children = (
+				9D6BF90A2A92355500408A85 /* SearchMovieView.swift */,
+				9D6BF90C2A92356300408A85 /* SearchMovieViewModel.swift */,
+				9D6BF90E2A92357500408A85 /* SearchMovieViewController.swift */,
+			);
+			path = SearchMovie;
+			sourceTree = "<group>";
+		};
+		9D6BF9102A923C0200408A85 /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				9D6BF9112A923C2400408A85 /* SearchBarView.swift */,
+				9D6BF9132A923D0300408A85 /* ClearButtonTextField.swift */,
+			);
+			path = SearchBar;
 			sourceTree = "<group>";
 		};
 		9D9EDDAC2A87F41900BBDE7D /* ApplicationTests */ = {
@@ -592,9 +624,10 @@
 			isa = PBXGroup;
 			children = (
 				9D6BF8F32A91DCB000408A85 /* Views */,
-				9D6BF8EC2A91DAD200408A85 /* FavoriteList */,
-				9DFC283D2A90482F006E6741 /* MovieDetail */,
 				9DFC28042A8B82F3006E6741 /* NowPlaying */,
+				9DFC283D2A90482F006E6741 /* MovieDetail */,
+				9D6BF9092A9234BD00408A85 /* SearchMovie */,
+				9D6BF8EC2A91DAD200408A85 /* FavoriteList */,
 				9D3C872C2A8633490097AFF4 /* RootViewController.swift */,
 			);
 			path = Main;
@@ -675,6 +708,7 @@
 			isa = PBXGroup;
 			children = (
 				9DFC28702A90B724006E6741 /* KFImageContainerView.swift */,
+				9D6BF9152A92F6F600408A85 /* KFImageContainerViewModel.swift */,
 			);
 			path = KFImageContainer;
 			sourceTree = "<group>";
@@ -813,6 +847,7 @@
 				9D9EDE132A887A9B00BBDE7D /* UIPaddingLabel.swift in Sources */,
 				9D3C87392A8633490097AFF4 /* AppDelegate.swift in Sources */,
 				9DFC28192A8CE9E2006E6741 /* Functions.swift in Sources */,
+				9D6BF9122A923C2400408A85 /* SearchBarView.swift in Sources */,
 				9D9EDDE12A87F82100BBDE7D /* Array+SafeIndex.swift in Sources */,
 				9D9EDDE02A87F82100BBDE7D /* UIColor+Theme.swift in Sources */,
 				9D3C87352A8633490097AFF4 /* RootViewController.swift in Sources */,
@@ -824,6 +859,7 @@
 				9D9EDE0A2A8800FF00BBDE7D /* SYBarButton.swift in Sources */,
 				9D9EDDF72A87FB8E00BBDE7D /* BaseViewController.swift in Sources */,
 				9D9EDDEF2A87F91500BBDE7D /* UITableView+Cell.swift in Sources */,
+				9D6BF90F2A92357500408A85 /* SearchMovieViewController.swift in Sources */,
 				9D9EDE042A87FF4B00BBDE7D /* UIView+ParentViewController.swift in Sources */,
 				9D9EDDBD2A87F54200BBDE7D /* BaseNavigationController.swift in Sources */,
 				9D9EDDE72A87F82100BBDE7D /* UICollectionView+Cell.swift in Sources */,
@@ -834,6 +870,7 @@
 				9D6BF8EE2A91DC2A00408A85 /* FavoriteListViewController.swift in Sources */,
 				9D9EDDF42A87F91500BBDE7D /* UISegmentedControl+Apperance.swift in Sources */,
 				9D9EDDE22A87F82100BBDE7D /* UIColor+Hex.swift in Sources */,
+				9D6BF9142A923D0300408A85 /* ClearButtonTextField.swift in Sources */,
 				9DFC28742A90C6BC006E6741 /* ToggleButton.swift in Sources */,
 				9DFC28652A906F34006E6741 /* MovieDetailView.swift in Sources */,
 				9DFC28202A8E201D006E6741 /* Images.swift in Sources */,
@@ -856,10 +893,13 @@
 				9D9EDDF22A87F91500BBDE7D /* UINavigationController+PushViewController.swift in Sources */,
 				9D9EDE032A87FF4B00BBDE7D /* UIViewController+PushViewController.swift in Sources */,
 				9D9EDDE32A87F82100BBDE7D /* UIFont+Theme.swift in Sources */,
+				9D6BF90B2A92355500408A85 /* SearchMovieView.swift in Sources */,
 				9D6BF8F62A91DD2500408A85 /* ToggleFavorButtonViewModel.swift in Sources */,
+				9D6BF90D2A92356300408A85 /* SearchMovieViewModel.swift in Sources */,
 				9D9EDDDE2A87F82100BBDE7D /* Double+ZeroFractoin.swift in Sources */,
 				9DFC28672A906F42006E6741 /* MovieDetailViewModel.swift in Sources */,
 				9D9EDDE42A87F82100BBDE7D /* Optional+IsNil.swift in Sources */,
+				9D6BF9162A92F6F600408A85 /* KFImageContainerViewModel.swift in Sources */,
 				9DFC280A2A8B843A006E6741 /* NowPlayingView.swift in Sources */,
 				9D9EDDDF2A87F82100BBDE7D /* Date+PrintTimeInterval.swift in Sources */,
 			);

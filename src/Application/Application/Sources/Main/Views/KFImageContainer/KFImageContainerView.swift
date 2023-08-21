@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class KFImageContainerView: UIView {
+class KFImageContainerView: BaseView<KFImageContainerViewModel> {
     
     
     //MARK: - Fields
@@ -19,20 +19,27 @@ class KFImageContainerView: UIView {
     
     
     //MARK: - Constructors
-    required init() {
-        super.init(frame: .zero)
-        
+    override func initEvent() {
         setupView()
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override func updateView() {
+        loadImage()
     }
     
     
     //MARK: - Properties
-    public var imageUrlString: String? = nil {
-        didSet { loadImage() }
+    public var imageUrlString: String? {
+        set {
+            viewModel.imageUrlString = newValue
+            loadImage()
+        }
+        get { viewModel.imageUrlString }
+    }
+    
+    public var movieId: Int? {
+        set { viewModel.movieId = newValue }
+        get { viewModel.movieId }
     }
     
     public var imageRatio: Double = 0.67 {
@@ -45,6 +52,7 @@ class KFImageContainerView: UIView {
         imageView.image = nil
         imageView.isHidden = true
         nodataImageView.isHidden = false
+        movieId = nil
     }
     
     private func setupView() {
@@ -80,9 +88,15 @@ class KFImageContainerView: UIView {
                 options: [
                     .transition(.fade(1.0)),
                     .cacheOriginalImage
-                ]) { [weak self] _ in
-                    self?.imageView.isHidden = false
-                    self?.nodataImageView.isHidden = true
+                ]) { [weak self] result in
+                    switch result {
+                    case .success(_):
+                        self?.imageView.isHidden = false
+                        self?.nodataImageView.isHidden = true
+                    case .failure(_):
+                        self?.imageView.isHidden = true
+                        self?.nodataImageView.isHidden = false
+                    }
                 }
             
         }

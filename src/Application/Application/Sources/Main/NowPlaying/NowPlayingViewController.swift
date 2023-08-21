@@ -42,23 +42,28 @@ class NowPlayingViewController: BaseViewController {
     private func setupNavigationItem() {
         
         let search = SYBarButton(type: .search)
-//        search.onPressed = { [unowned self] _ in
-//
-//        }
+        search.onPressed = { [unowned self] _ in
+            toSearchMovie()
+        }
         
         let favor = SYBarButton(type: .favor)
         favor.onPressed = { [unowned self] _ in
             toFavorList()
         }
         
-        let setting = SYBarButton(type: .gear)
+//        let setting = SYBarButton(type: .gear)
 //        setting.onPressed = {
 //
 //        }
         
         
         navigationItem.leftBarButtonItems = [search]
-        navigationItem.rightBarButtonItems = [setting, favor]
+        navigationItem.rightBarButtonItems = [favor]
+    }
+    
+    private func toSearchMovie() {
+        let vc = SearchMovieViewController()
+        pushViewController(vc)
     }
     
     private func toFavorList() {

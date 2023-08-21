@@ -15,6 +15,9 @@ class BaseViewController: UIViewController {
     
     
     //MARK: - Fields
+    private var baseNavigationController: BaseNavigationController? {
+        navigationController as? BaseNavigationController
+    }
     
     
     //MARK: - Constructors
@@ -57,8 +60,9 @@ class BaseViewController: UIViewController {
     
     
     //MARK: - Properties
-    public var isDarkMode: Bool = true {
-        didSet { changeDarkMode() }
+    public var isDarkMode: Bool {
+        set { baseNavigationController?.isDarkMode = newValue  }
+        get { baseNavigationController?.isDarkMode ?? false }
     }
     
     public var isTransparent: Bool = false
@@ -83,11 +87,6 @@ class BaseViewController: UIViewController {
             navigation.setNormalAppearance()
         }
         
-    }
-    
-    private func changeDarkMode() {
-        guard let navigationController = navigationController as? BaseNavigationController else { return }
-        navigationController.isDarkMode = isDarkMode
     }
     
     private func setLeftNaviToClose() {

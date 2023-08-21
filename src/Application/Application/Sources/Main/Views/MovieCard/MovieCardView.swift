@@ -55,6 +55,7 @@ class MovieCardView: BaseView<MovieCardViewModel> {
     private func updateValue() {
         
         kfImageView.imageUrlString = viewModel.imageUrl
+        kfImageView.movieId = viewModel.movieId
         
         nameLabel.text = viewModel.name ?? "***"
         
@@ -89,6 +90,7 @@ class MovieCardView: BaseView<MovieCardViewModel> {
         dateLabel.font = .text_m
         dateLabel.numberOfLines = 0
         dateLabel.setContentHuggingPriority(.init(750), for: .horizontal)
+        dateLabel.setContentCompressionResistancePriority(.init(1000), for: .horizontal)
         
         summaryLabel.font = .text_s
         summaryLabel.numberOfLines = 1
@@ -116,9 +118,10 @@ class MovieCardView: BaseView<MovieCardViewModel> {
         
         let vfls: VFLDictionary = [
             "H:|-(0)-[image]-(0)-|": nil,
-            "H:|-(16)-[name]-(8)-[date]-(>=16)-|": .alignAllCenterY,
+            "H:|-(16)-[name]-(8)-[date]-(>=16)-|": nil,
             "H:|-(16)-[sum]-(16)-|": nil,
-            "V:|-(0)-[image]-(12)-[name(20)]-(6)-[sum(15)]-(8)-|": nil
+            "V:|-(0)-[image]-(12)-[name]-(6)-[sum(15)]-(8)-|": nil,
+            "V:[image]-(14)-[date]": nil
         ]
         
         let constraints = constraintsArrayVFL(vfls, views: views)
