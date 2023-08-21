@@ -43,11 +43,10 @@ class ToggleFavorButton: ToggleButton {
     public func setupViewModel() {
         
         viewModel.updateFavorite = { [weak self] isFavor in
-            self?.isSelected = isFavor
-            self?.isEnabled = true
-            self?.sendNotification(isFavor: isFavor)
-            
+            self?.updateApperance(by: isFavor)
         }
+        
+        updateApperance(by: viewModel.isFavor)
         
     }
     
@@ -55,6 +54,12 @@ class ToggleFavorButton: ToggleButton {
         normalColor = .neutral100
         self.height.constant = 30
         self.width.constant = 36
+    }
+    
+    private func updateApperance(by isFavor: Bool) {
+        isSelected = isFavor
+        isEnabled = true
+        sendNotification(isFavor: isFavor)
     }
     
     private func sendNotification(isFavor: Bool) {

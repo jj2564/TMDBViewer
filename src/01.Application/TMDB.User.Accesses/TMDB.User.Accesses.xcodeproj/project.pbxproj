@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D6BF9272A93694300408A85 /* UserDefaultsSettingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6BF9262A93694300408A85 /* UserDefaultsSettingService.swift */; };
 		9DFC28AD2A90D07D006E6741 /* TMDB_User_Accesses.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DFC28AC2A90D07D006E6741 /* TMDB_User_Accesses.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9DFC28D32A91A807006E6741 /* Infrastructure_DataStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFC28D22A91A807006E6741 /* Infrastructure_DataStorage.framework */; };
 		9DFC28D42A91A807006E6741 /* Infrastructure_DataStorage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFC28D22A91A807006E6741 /* Infrastructure_DataStorage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -34,6 +35,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9D6BF9262A93694300408A85 /* UserDefaultsSettingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsSettingService.swift; sourceTree = "<group>"; };
 		9DFC28A92A90D07D006E6741 /* TMDB_User_Accesses.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TMDB_User_Accesses.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DFC28AC2A90D07D006E6741 /* TMDB_User_Accesses.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMDB_User_Accesses.h; sourceTree = "<group>"; };
 		9DFC28CE2A91A802006E6741 /* Infrastructure_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Infrastructure_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				9DFC28D82A91A838006E6741 /* DataStorageFavoriteService.swift */,
+				9D6BF9262A93694300408A85 /* UserDefaultsSettingService.swift */,
 				9DFC28AC2A90D07D006E6741 /* TMDB_User_Accesses.h */,
 			);
 			path = TMDB.User.Accesses;
@@ -175,6 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D6BF9272A93694300408A85 /* UserDefaultsSettingService.swift in Sources */,
 				9DFC28D92A91A838006E6741 /* DataStorageFavoriteService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

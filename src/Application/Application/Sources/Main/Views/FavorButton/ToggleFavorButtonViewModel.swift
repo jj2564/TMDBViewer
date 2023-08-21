@@ -8,7 +8,9 @@
 import Foundation
 
 import Infrastructure_Hosting
+import Infrastructure_HttpClient
 import TMDB_User_Core
+import TMDB_Movies_Core
 
 class ToggleFavorButtonViewModel: BaseViewModel {
     
@@ -26,9 +28,15 @@ class ToggleFavorButtonViewModel: BaseViewModel {
     //MARK: - Properties
     public lazy var favoriteService: FavoriteService? = userContext?.favoriteService
     
-    public var movieId: Int? = nil {
+    public var movie: Movie? = nil {
         didSet { checkFavor() }
     }
+    
+    public var movieId: Int? {
+        movie?.id
+    }
+    
+    public var isFavor: Bool = false
     
     public var updateFavorite: ((Bool) -> Void)?
     
@@ -39,6 +47,7 @@ class ToggleFavorButtonViewModel: BaseViewModel {
         guard let id = movieId else { return }
         
         fetchFavorite(by: id) { [weak self] isFavor in
+            self?.isFavor = isFavor
             self?.updateFavorite?(isFavor)
             completion?()
         }
@@ -68,8 +77,13 @@ class ToggleFavorButtonViewModel: BaseViewModel {
         
         let idString = "\(id)"
         
+        var data: Data? = nil
+        if let movie, let movieData = try? jsonData(encodable: movie) {
+            data = movieData
+        }
+        
         AsyncHelper().excute { [unowned self] in
-            try favoriteService?.add(by: idString)
+            try favoriteService?.add(by: idString, data: data)
         } completion: { _ in
             completion?(true)
         } error: { _ in

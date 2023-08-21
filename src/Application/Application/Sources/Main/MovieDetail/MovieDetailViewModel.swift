@@ -47,7 +47,7 @@ class MovieDetailViewModel: BaseViewModel {
             completion?()
         }
         
-        favorButtonViewModel.movieId = id
+        favorButtonViewModel.movie = movie
         
     }
     

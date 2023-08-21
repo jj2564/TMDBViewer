@@ -50,7 +50,6 @@ class SearchMovieView: BaseView<SearchMovieViewModel> {
         
         searchView.bottomToTop(of: tableView)
         
-        nodataView.isHidden = false
     }
     
 }

@@ -11,6 +11,7 @@
 		9D2E104C2A877EE500E17215 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2E10492A877EE500E17215 /* DataStorage.swift */; };
 		9D2E104D2A877EE500E17215 /* DataStorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2E104A2A877EE500E17215 /* DataStorageProvider.swift */; };
 		9D2E104E2A877EE500E17215 /* BasicDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2E104B2A877EE500E17215 /* BasicDataStorage.swift */; };
+		9D6BF9232A93668200408A85 /* UserDefaults+Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6BF9222A93668200408A85 /* UserDefaults+Manager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		9D2E10492A877EE500E17215 /* DataStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
 		9D2E104A2A877EE500E17215 /* DataStorageProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStorageProvider.swift; sourceTree = "<group>"; };
 		9D2E104B2A877EE500E17215 /* BasicDataStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicDataStorage.swift; sourceTree = "<group>"; };
+		9D6BF9222A93668200408A85 /* UserDefaults+Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Manager.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 				9D2E104B2A877EE500E17215 /* BasicDataStorage.swift */,
 				9D2E10492A877EE500E17215 /* DataStorage.swift */,
 				9D2E104A2A877EE500E17215 /* DataStorageProvider.swift */,
+				9D6BF9222A93668200408A85 /* UserDefaults+Manager.swift */,
 				9D2E0FFE2A8778FF00E17215 /* Infrastructure_DataStorage.h */,
 			);
 			path = Infrastructure.DataStorage;
@@ -141,6 +144,7 @@
 			files = (
 				9D2E104D2A877EE500E17215 /* DataStorageProvider.swift in Sources */,
 				9D2E104E2A877EE500E17215 /* BasicDataStorage.swift in Sources */,
+				9D6BF9232A93668200408A85 /* UserDefaults+Manager.swift in Sources */,
 				9D2E104C2A877EE500E17215 /* DataStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

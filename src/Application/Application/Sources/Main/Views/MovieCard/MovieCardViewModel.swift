@@ -84,7 +84,7 @@ class MovieCardViewModel: BaseViewModel {
         summary = movie?.overview
         movieId = movie?.id
         
-        favorButtonViewModel.movieId = movieId
+        favorButtonViewModel.movie = movie
     }
     
 }

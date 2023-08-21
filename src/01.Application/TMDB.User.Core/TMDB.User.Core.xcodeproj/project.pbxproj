@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D6BF9252A93687400408A85 /* SettingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6BF9242A93687400408A85 /* SettingService.swift */; };
 		9DFC28852A90CFD8006E6741 /* TMDB_User_Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DFC28842A90CFD8006E6741 /* TMDB_User_Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9DFC28B42A90D0D5006E6741 /* UserContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC28B32A90D0D5006E6741 /* UserContext.swift */; };
 		9DFC28B62A90D10E006E6741 /* FavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC28B52A90D10E006E6741 /* FavoriteService.swift */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D6BF9242A93687400408A85 /* SettingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingService.swift; sourceTree = "<group>"; };
 		9DFC28812A90CFD8006E6741 /* TMDB_User_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TMDB_User_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DFC28842A90CFD8006E6741 /* TMDB_User_Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMDB_User_Core.h; sourceTree = "<group>"; };
 		9DFC28B32A90D0D5006E6741 /* UserContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserContext.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 				9DFC28B32A90D0D5006E6741 /* UserContext.swift */,
 				9DFC28DA2A91AFC1006E6741 /* Favorite.swift */,
 				9DFC28B52A90D10E006E6741 /* FavoriteService.swift */,
+				9D6BF9242A93687400408A85 /* SettingService.swift */,
 				9DFC28842A90CFD8006E6741 /* TMDB_User_Core.h */,
 			);
 			path = TMDB.User.Core;
@@ -141,6 +144,7 @@
 			files = (
 				9DFC28DB2A91AFC1006E6741 /* Favorite.swift in Sources */,
 				9DFC28B42A90D0D5006E6741 /* UserContext.swift in Sources */,
+				9D6BF9252A93687400408A85 /* SettingService.swift in Sources */,
 				9DFC28B62A90D10E006E6741 /* FavoriteService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

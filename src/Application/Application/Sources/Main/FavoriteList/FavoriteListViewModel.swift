@@ -8,6 +8,7 @@
 import Foundation
 
 import Infrastructure_Hosting
+import Infrastructure_HttpClient
 import TMDB_User_Core
 import TMDB_Movies_Core
 
@@ -21,13 +22,20 @@ class FavoriteListViewModel: BaseViewModel {
     //MARK: - Constructors
     required init() {
         super.init()
+        fetchUserSortStyle()
     }
     
     
     //MARK: - Properties
     private lazy var favoriteService: FavoriteService? = userContext?.favoriteService
+    private lazy var settingService: SettingService? = userContext?.settingService
     
-    public var movieViewModelList: [MovieCardViewModel] = []
+    public var movieViewModelList: [MovieCardViewModel] = [] {
+        didSet { updateSort() }
+    }
+    
+    public var sortBy: MovieCardSortStyle = .releaseDate
+    public var showList: [MovieCardViewModel] = []
     
     
     //MARK: - Methods
@@ -43,6 +51,26 @@ class FavoriteListViewModel: BaseViewModel {
         
     }
     
+    public func updateSort() {
+        
+        // record
+        try? settingService?.set(key: "MovieCardSortStyle", value: sortBy.rawValue)
+        
+        // sort
+        showList = movieViewModelList.sorted(by: sortBy.sortStrategy.sort)
+        
+        // update
+        updateView?()
+    }
+    
+    private func fetchUserSortStyle() {
+        
+        if let value = try?  settingService?.get(key: "MovieCardSortStyle"), let sortStyle = MovieCardSortStyle(rawValue: value) {
+            self.sortBy = sortStyle
+        }
+        
+    }
+    
     private func fetchFavoriteAll(completion: ((Bool) -> Void)?  = nil) {
         
         AsyncHelper().excute { [unowned self] in
@@ -51,8 +79,7 @@ class FavoriteListViewModel: BaseViewModel {
             guard let `self` = self else { return }
             guard let list else { return }
             
-            let idList = list.compactMap { $0.id }
-            self.movieViewModelList = self.generateViewModelList(idList)
+            self.movieViewModelList = self.generateViewModelList(list)
             completion?(true)
             
         } error: { _ in
@@ -61,12 +88,16 @@ class FavoriteListViewModel: BaseViewModel {
         
     }
     
-    private func generateViewModelList(_ idList: [String]) -> [MovieCardViewModel] {
+    private func generateViewModelList(_ favorList: [Favorite]) -> [MovieCardViewModel] {
         
-        idList.compactMap {
+        favorList.compactMap {
             let vm = MovieCardViewModel()
-            guard let id = Int($0) else { return nil }
-            vm.movie = Movie(id: id)
+            if let data = $0.data, let movie = try? Movie(data: data) {
+                vm.movie = movie
+            } else if let id = Int($0.id) {
+                vm.movie = Movie(id: id)
+            } else { return nil }
+            
             return vm
         }
         

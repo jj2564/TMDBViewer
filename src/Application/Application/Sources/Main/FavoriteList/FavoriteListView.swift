@@ -56,12 +56,12 @@ class FavoriteListView: BaseView<FavoriteListViewModel> {
 extension FavoriteListView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.movieViewModelList.count
+        viewModel.showList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let vm = viewModel.movieViewModelList[safe: indexPath.row] {
+        if let vm = viewModel.showList[safe: indexPath.row] {
             let cell = tableView.dequeueCell(MovieCardCell.self, indexPath: indexPath)
             
             cell.viewModel = vm
@@ -81,7 +81,7 @@ extension FavoriteListView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let index = indexPath.row
-        if let vm = viewModel.movieViewModelList[safe: index] {
+        if let vm = viewModel.showList[safe: index] {
             let vc = MovieDetailViewController()
             vc.movie = vm.movie
             parentViewController?.pushViewController(vc)

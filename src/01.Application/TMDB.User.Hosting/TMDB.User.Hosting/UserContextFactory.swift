@@ -29,9 +29,12 @@ public class UserContextFactory: ServiceFactory {
         let dataStorage: DataStorage? = provider.getService()
         let favoriteService = DataStorageFavoriteService(dataStorage)
         
+        let settingService = UserDefaultsSettingService()
+        
         // create
         let context = UserContext(
-            favoriteService: favoriteService
+            favoriteService: favoriteService,
+            settingService: settingService
         )
         
         // return

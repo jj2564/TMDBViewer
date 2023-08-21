@@ -11,13 +11,16 @@ public class Favorite: Codable {
     
     public var id: String!
     public var createDate: Date!
+    public var data: Data?
     
     public init(
         id: String,
-        createDate: Date
+        createDate: Date,
+        data: Data?
     ) {
         self.id = id
         self.createDate = createDate
+        self.data = data
     }
     
 }

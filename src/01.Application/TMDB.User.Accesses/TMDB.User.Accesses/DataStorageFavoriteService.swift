@@ -30,11 +30,11 @@ public class DataStorageFavoriteService: FavoriteService {
     
     
     //MARK: - Methods
-    public func add(by id: String) throws {
+    public func add(by id: String, data: Data?) throws {
         
         // create
         let date = Date()
-        let favorite = Favorite(id: id, createDate: date)
+        let favorite = Favorite(id: id, createDate: date, data: data)
         let data = try jsonData(encodable: favorite)
         let object = BasicDataStorage(key: id, data: data, format: "Movie", validDate: .distantFuture)
         

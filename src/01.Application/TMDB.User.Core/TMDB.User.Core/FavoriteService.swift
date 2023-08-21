@@ -11,7 +11,7 @@ public protocol FavoriteService {
     
     
     //MARK: - Method
-    func add(by id: String) throws
+    func add(by id: String, data: Data?) throws
     
     func delete(by id: String) throws
     

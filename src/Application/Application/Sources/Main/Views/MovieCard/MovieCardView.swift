@@ -89,6 +89,7 @@ class MovieCardView: BaseView<MovieCardViewModel> {
         
         dateLabel.font = .text_m
         dateLabel.numberOfLines = 0
+        dateLabel.textAlignment = .right
         dateLabel.setContentHuggingPriority(.init(750), for: .horizontal)
         dateLabel.setContentCompressionResistancePriority(.init(1000), for: .horizontal)
         
@@ -118,7 +119,7 @@ class MovieCardView: BaseView<MovieCardViewModel> {
         
         let vfls: VFLDictionary = [
             "H:|-(0)-[image]-(0)-|": nil,
-            "H:|-(16)-[name]-(8)-[date]-(>=16)-|": nil,
+            "H:|-(16)-[name]-(8)-[date]-(16)-|": nil,
             "H:|-(16)-[sum]-(16)-|": nil,
             "V:|-(0)-[image]-(12)-[name]-(6)-[sum(15)]-(8)-|": nil,
             "V:[image]-(14)-[date]": nil
