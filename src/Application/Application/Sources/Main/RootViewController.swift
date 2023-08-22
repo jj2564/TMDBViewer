@@ -6,43 +6,90 @@
 //
 
 import UIKit
+
+import KeychainAccess
 import TinyConstraints
 
+import Infrastructure_Hosting
+import TMDB_Movies_Core
 
 class RootViewController: BaseViewController {
 
 
     //MARK: - Fields
+    let baseView = BaseView()
+    
+    private let moviesContext: MoviesContext? = HostContext.current.getService()
     
     
     //MARK: - Constructors
     override func loadView() {
         super.loadView()
         
-        let button = UIButton()
+        view.addSubview(baseView)
+        baseView.edgesToSuperview()
+        baseView.startLoadinView()
         
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("點此進入現在播放頁面", for: .normal)
-        button.setTitleColor(.secondary10, for: .normal)
-        button.titleLabel?.font = .title_l_bold
-        
-        button.addTarget(self, action: #selector(didPressedNowPlaying(_:)), for: .touchUpInside)
-        view.addSubview(button)
-        
-        button.centerInSuperview()
-        
+        checkKeychain()
     }
     
     
     //MARK: - Properties
+    public lazy var authRepository: AuthRepository? = moviesContext?.authRepository
     
     
     //MARK: - Methods
-    @objc private func didPressedNowPlaying(_ sender: UIButton) {
+    private func checkKeychain() {
+        
+        let keychain = Keychain(service: "com.example.irving")
+        
+        let token = keychain["UKnowWho"]
+        
+        if let token {
+            
+            checkAuth(token: token) { [weak self] success in
+                guard let `self` = self else { return }
+                
+                if success {
+                    self.toNowPlaying()
+                } else {
+                    toLogin()
+                }
+            }
+            
+        } else {
+            toLogin()
+        }
+        
+        
+    }
+    
+    private func checkAuth(token: String, completion: ((Bool) -> Void)?  = nil) {
+        
+        AsyncHelper().excute { [unowned self] in
+            try authRepository?.authentication(token: token)
+        } completion: { result in
+            let success = (result == true)
+            completion?(success)
+        } error: { _ in
+            completion?(false)
+        }
+        
+    }
+    
+    private func toNowPlaying() {
         
         let vc = NowPlayingViewController()
         UIApplication.rootViewController = BaseNavigationController(rootViewController: vc)
         
     }
+    
+    private func toLogin() {
+        
+        let vc = LoginViewController()
+        UIApplication.rootViewController = BaseNavigationController(rootViewController: vc)
+        
+    }
+    
 }
 

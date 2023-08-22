@@ -15,5 +15,3 @@ APP_BUNDLE_IDENTIFIER = com.irvinghuang.TMDBViewer
 APP_DISPLAY_NAME = TMDBViewer
 
 APP_SERVICE_URL = https:/$()/api.themoviedb.org/3/
-
-ACCESS_TOKEN = YOUR_TOKEN

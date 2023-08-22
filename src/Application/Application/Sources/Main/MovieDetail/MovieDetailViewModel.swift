@@ -32,7 +32,11 @@ class MovieDetailViewModel: BaseViewModel {
     
     public var mainImageUrl: String? { movie?.landscapeOriginalUrl }
     public var titleString: String? { movie?.originalTitle }
-
+    public var releaseDate: Date? { movie?.releaseDate }
+    public var duration: Int? { movie?.runtime }
+    public var tagline: String? { movie?.tagline }
+    public var overview: String? { movie?.overview }
+    
     
     //MARK: - Methods
     public func loadMoviewDetail(completion: (() -> Void)?  = nil) {

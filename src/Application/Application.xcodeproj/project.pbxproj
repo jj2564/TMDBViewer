@@ -41,6 +41,10 @@
 		9D6BF9142A923D0300408A85 /* ClearButtonTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6BF9132A923D0300408A85 /* ClearButtonTextField.swift */; };
 		9D6BF9162A92F6F600408A85 /* KFImageContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6BF9152A92F6F600408A85 /* KFImageContainerViewModel.swift */; };
 		9D6BF9292A93895A00408A85 /* MovieCardSortStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6BF9282A93895A00408A85 /* MovieCardSortStyle.swift */; };
+		9D6BF92B2A944B3800408A85 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6BF92A2A944B3800408A85 /* LoginView.swift */; };
+		9D6BF92D2A944B4700408A85 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6BF92C2A944B4700408A85 /* LoginViewModel.swift */; };
+		9D6BF92F2A944B5400408A85 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6BF92E2A944B5400408A85 /* LoginViewController.swift */; };
+		9D6BF9362A948D8800408A85 /* Toaster in Frameworks */ = {isa = PBXBuildFile; productRef = 9D6BF9352A948D8800408A85 /* Toaster */; };
 		9D9EDD992A879CD800BBDE7D /* Infrastructure_Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9EDD972A879CD800BBDE7D /* Infrastructure_Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9D9EDDA62A879F2D00BBDE7D /* Infrastructure_DataStorage_Hosting.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9EDDA42A879F2D00BBDE7D /* Infrastructure_DataStorage_Hosting.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9D9EDDAE2A87F41900BBDE7D /* ApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9EDDAD2A87F41900BBDE7D /* ApplicationTests.swift */; };
@@ -221,6 +225,9 @@
 		9D6BF9132A923D0300408A85 /* ClearButtonTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButtonTextField.swift; sourceTree = "<group>"; };
 		9D6BF9152A92F6F600408A85 /* KFImageContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KFImageContainerViewModel.swift; sourceTree = "<group>"; };
 		9D6BF9282A93895A00408A85 /* MovieCardSortStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCardSortStyle.swift; sourceTree = "<group>"; };
+		9D6BF92A2A944B3800408A85 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		9D6BF92C2A944B4700408A85 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		9D6BF92E2A944B5400408A85 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9D9EDD972A879CD800BBDE7D /* Infrastructure_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Infrastructure_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9EDDA42A879F2D00BBDE7D /* Infrastructure_DataStorage_Hosting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Infrastructure_DataStorage_Hosting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9EDDAB2A87F41900BBDE7D /* ApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -315,6 +322,7 @@
 				9D6BF9012A921EFD00408A85 /* TMDB_User_Accesses.framework in Frameworks */,
 				9DFC28622A905991006E6741 /* TMDB_Movies_Core.framework in Frameworks */,
 				9D35D98A2A88BAAC004AF453 /* TMDB_Movies_Hosting.framework in Frameworks */,
+				9D6BF9362A948D8800408A85 /* Toaster in Frameworks */,
 				9DFC28602A90598F006E6741 /* TMDB_Movies_Accesses.framework in Frameworks */,
 				9D6BF9032A921EFF00408A85 /* TMDB_User_Core.framework in Frameworks */,
 				9D9EDDCA2A87F6A600BBDE7D /* IQKeyboardManagerSwift in Frameworks */,
@@ -521,6 +529,9 @@
 		9D6BF9212A935B4400408A85 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				9D6BF92A2A944B3800408A85 /* LoginView.swift */,
+				9D6BF92C2A944B4700408A85 /* LoginViewModel.swift */,
+				9D6BF92E2A944B5400408A85 /* LoginViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -754,6 +765,7 @@
 				9D9EDDC62A87F67300BBDE7D /* Kingfisher */,
 				9D9EDDC92A87F6A600BBDE7D /* IQKeyboardManagerSwift */,
 				9DFC28022A8B82C7006E6741 /* KeychainAccess */,
+				9D6BF9352A948D8800408A85 /* Toaster */,
 			);
 			productName = TMDBViewer;
 			productReference = 9D3C87142A862EFF0097AFF4 /* Application.app */;
@@ -810,6 +822,7 @@
 				9D9EDDC52A87F67300BBDE7D /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				9D9EDDC82A87F6A600BBDE7D /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				9DFC28012A8B82C7006E6741 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				9D6BF9342A948D8800408A85 /* XCRemoteSwiftPackageReference "Toaster" */,
 			);
 			productRefGroup = 9D3C87152A862EFF0097AFF4 /* Products */;
 			projectDirPath = "";
@@ -851,6 +864,7 @@
 				9DFC283A2A8F3BEE006E6741 /* MovieCardCell.swift in Sources */,
 				9D9EDE052A87FF4B00BBDE7D /* UIView+SuperTableView.swift in Sources */,
 				9D9EDE072A88001900BBDE7D /* UIResponder+Next.swift in Sources */,
+				9D6BF92F2A944B5400408A85 /* LoginViewController.swift in Sources */,
 				9DFC286D2A90B22F006E6741 /* ScrollableStackView.swift in Sources */,
 				9D9EDE002A87FF4B00BBDE7D /* UIView+RemoveSubviews.swift in Sources */,
 				9DFC28082A8B8422006E6741 /* NowPlayingViewModel.swift in Sources */,
@@ -892,10 +906,12 @@
 				9DFC280D2A8B85B4006E6741 /* AsyncHelper.swift in Sources */,
 				9D9EDDE62A87F82100BBDE7D /* UIApplication+Window.swift in Sources */,
 				9D9EDDE52A87F82100BBDE7D /* Int+CommaString.swift in Sources */,
+				9D6BF92D2A944B4700408A85 /* LoginViewModel.swift in Sources */,
 				9D9EDDF02A87F91500BBDE7D /* UIScreen+Size.swift in Sources */,
 				9D9EDDF12A87F91500BBDE7D /* UINavigationController+Appearance.swift in Sources */,
 				9DFC28112A8CDB85006E6741 /* MovieCardViewModel.swift in Sources */,
 				9D9EDE022A87FF4B00BBDE7D /* UIView+fixedConstraint.swift in Sources */,
+				9D6BF92B2A944B3800408A85 /* LoginView.swift in Sources */,
 				9D6BF8F22A91DC4500408A85 /* FavoriteListView.swift in Sources */,
 				9D9EDDE82A87F82100BBDE7D /* UIApplication+RootViewController.swift in Sources */,
 				9DFC28062A8B83AC006E6741 /* NowPlayingViewController.swift in Sources */,
@@ -1308,6 +1324,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9D6BF9342A948D8800408A85 /* XCRemoteSwiftPackageReference "Toaster" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Toaster";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		9D9EDDC22A87F63100BBDE7D /* XCRemoteSwiftPackageReference "TinyConstraints" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/roberthein/TinyConstraints";
@@ -1343,6 +1367,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9D6BF9352A948D8800408A85 /* Toaster */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9D6BF9342A948D8800408A85 /* XCRemoteSwiftPackageReference "Toaster" */;
+			productName = Toaster;
+		};
 		9D9EDDC32A87F63100BBDE7D /* TinyConstraints */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9D9EDDC22A87F63100BBDE7D /* XCRemoteSwiftPackageReference "TinyConstraints" */;

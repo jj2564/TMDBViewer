@@ -13,7 +13,7 @@ public extension String {
         
         let imageBaseUrl = "https://image.tmdb.org/t/p/"
         let name = self
-        let size  = isThumb ? "w342" : "original"
+        let size  = isThumb ? "w500" : "original"
         
         return imageBaseUrl + size + name
         

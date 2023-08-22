@@ -57,12 +57,16 @@ class MovieCardView: BaseView<MovieCardViewModel> {
         kfImageView.imageUrlString = viewModel.imageUrl
         kfImageView.movieId = viewModel.movieId
         
-        nameLabel.text = viewModel.name ?? "***"
+        nameLabel.text = viewModel.name ?? "XXXXXXXXX"
         
-        let dateText = viewModel.date?.dateString
-        dateLabel.text = dateText ?? "****-**-**"
+        if viewModel.date != .distantPast {
+            let dateText = viewModel.date?.dateString
+            dateLabel.text = dateText ?? "XXXX-XX-XX"
+        } else {
+            dateLabel.text = "no date info"
+        }
         
-        summaryLabel.text = viewModel.summary ?? "*****"
+        summaryLabel.text = viewModel.summary ?? "xxxxxxx xxxx xxxxx xxxxx, xxxxxxx xxxx xxxxx."
     }
     
     private func setupView() {

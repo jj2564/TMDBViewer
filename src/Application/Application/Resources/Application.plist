@@ -4,8 +4,6 @@
 <dict>
 	<key>ServiceUrl</key>
 	<string>${APP_SERVICE_URL}</string>
-	<key>AccessToken</key>
-	<string>$(ACCESS_TOKEN)</string>
 	<key>Environment</key>
 	<string>$(Environment)</string>
 </dict>

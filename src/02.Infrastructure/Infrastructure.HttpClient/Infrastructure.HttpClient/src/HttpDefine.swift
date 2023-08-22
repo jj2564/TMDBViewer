@@ -31,7 +31,9 @@ public func newJSONDecoder() -> JSONDecoder {
         let container = try decoder.singleValueContainer()
         let dateString = try container.decode(String.self)
         
-        if let date = iso8601Formatter.date(from: dateString) {
+        if dateString.count == 0 {
+            return .distantPast
+        } else if let date = iso8601Formatter.date(from: dateString) {
             return date
         } else if let date = customFormatter.date(from: dateString) {
             return date

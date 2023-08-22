@@ -29,9 +29,13 @@ public class MoviesContextFactory: ServiceFactory {
         let httpClient: HttpClient? = provider.getService()
         
         let moviesRepository = RestMoviesRepository(httpClient)
+        let photosRepository = RestPhotoRepository(httpClient)
+        let authRepository = RestAuthRepository(httpClient)
         
         let context = MoviesContext(
-            moviesRepository: moviesRepository
+            moviesRepository: moviesRepository,
+            photosRepository: photosRepository,
+            authRepository: authRepository
         )
         
         // return

@@ -51,12 +51,6 @@ class NowPlayingViewController: BaseViewController {
             toFavorList()
         }
         
-//        let setting = SYBarButton(type: .gear)
-//        setting.onPressed = {
-//
-//        }
-        
-        
         navigationItem.leftBarButtonItems = [search]
         navigationItem.rightBarButtonItems = [favor]
     }

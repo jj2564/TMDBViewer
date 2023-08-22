@@ -16,5 +16,3 @@ APP_DISPLAY_NAME = 開發版_TV
 
 APP_SERVICE_URL = https:/$()/api.themoviedb.org/3/
 
-ACCESS_TOKEN = YOUR_TOKEN
-

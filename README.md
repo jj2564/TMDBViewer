@@ -58,6 +58,27 @@
 
 設計上並沒有實作 `Setting` 的頁面，我認為這些功能可以巧妙的融入一般頁面之中，再透過 `UserDefault` 紀錄設定參數就能達到同樣的效果
 
+### Demo
+
+<img src="images/login.png" alt="drawing" width="200"/>
+<img src="images/nowplaying.png" alt="drawing" width="200"/>  
+<img src="images/favor.png" alt="drawing" width="200"/>
+<img src="images/sort.png" alt="drawing" width="200"/>  
+<img src="images/search.png" alt="drawing" width="200"/>
+<img src="images/detail.png" alt="drawing" width="200"/>
+
+
+### Login
+
+TMDB需要透過 `token` 才能取得資料，但為了保護資料不應該將其存在程式碼之中，因此設計一個登入讓使用者輸入自己的 `token` ，其實邏輯上有一點打架因為其實一般使用者應該是透過開發者的 `token` 來觀賞資料，但是這邊要求的是輸入開發者的。
+
+透過 
+
+```
+https://api.themoviedb.org/3/authentication
+```
+驗證為有效的 `token` 之後會透過 `AccessKeychain` 進行資料的保護，之後的使用也會自動從中取出資料驗證，達到自動登入的效果。
+
 
 ### NowPlaying
 
@@ -67,7 +88,7 @@ MovieCardView的部分，沒有完全展現Summary，希望能讓使用者點選
 
 本頁面沒有製作讀取中的框架，因本頁尚未確定資料狀態我認為較不適合，再之後的`我的收藏`因資料庫中已儲存已知數量的movieId，故可先製成框架。
 
-在這邊圖片會取比較小的 w342。
+在這邊圖片會取比較小的 w500。
 
 
 ### MovieDetail
@@ -102,7 +123,7 @@ MovieCardView的部分，沒有完全展現Summary，希望能讓使用者點選
 
 ### TODO
 
-- [ ] 排序設定要儲存起來
+- [x] 排序設定要儲存起來
 - [ ] 收藏排序資料時效問題
 - [ ] 不同排版，要再多套一個CollectionView
 

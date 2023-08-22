@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Toaster
 
 typealias VFLDictionary = [String: NSLayoutConstraint.FormatOptions?]
 typealias ViewsDictionary = [String: UIView]
@@ -50,5 +51,19 @@ func classFromString(_ className: String) -> AnyClass? {
     }
 
     return nil
+    
+}
+
+func showToaster(_ text: String) {
+    
+    let toast = Toast(text: text, duration: 1.0)
+    toast.view.backgroundColor = .black.withAlphaComponent(0.6)
+    toast.view.textColor = .neutral100
+    toast.view.font = .title_l
+    toast.view.bottomOffsetPortrait = UIScreen.main.bounds.height / 2
+    
+    DispatchQueue.main.async {
+        toast.show()
+    }
     
 }

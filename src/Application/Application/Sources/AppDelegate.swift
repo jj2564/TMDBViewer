@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 import Infrastructure_Core
 
@@ -21,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         initalHosting()
         setupWithCore()
+        setupIQKeyboard()
         setupRootViewController()
         
         return true
@@ -47,14 +49,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Irving| Is Develop Mode.")
         }
         
-        let token = InfrastructureCoreContext.shared.accessToken
         let serviceUrl = InfrastructureCoreContext.shared.serviceUrl
         
         let httpClient: HttpClient? = HostContext.current.getService()
-        httpClient?.setToken(token)
         httpClient?.setServiceUrl(serviceUrl)
         
         
+    }
+    
+    private func setupIQKeyboard() {
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.layoutIfNeededOnUpdate = true
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
     }
 
 }

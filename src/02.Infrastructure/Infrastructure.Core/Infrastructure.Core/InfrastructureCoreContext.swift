@@ -37,11 +37,6 @@ public class InfrastructureCoreContext {
         }
         self.mode = mode
         
-        guard let token = infoDictionary["AccessToken"] as? String else {
-            fatalError("Doesn't have TMDB token")
-        }
-        self.accessToken = token
-        
         guard let serviceUrl = infoDictionary["ServiceUrl"] as? String else {
             fatalError("Doesn't have Service URL")
         }
@@ -52,8 +47,6 @@ public class InfrastructureCoreContext {
     
     //MARK: - Properties
     public var mode: Mode = .PROD
-    
-    public var accessToken: String = ""
     
     public var serviceUrl: String = ""
     
