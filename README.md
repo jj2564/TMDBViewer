@@ -3,8 +3,8 @@
 
 ## How to use?
 
-請先在 `Environment_DEV` & `Enviornment_PROD` 填寫 TMDB 的 Access Token
-正常情況下不會採用這種方式來放置Token，現階段暫無製作登入取得Token的計畫，因此先採用此種方式來進行。
+~~請先在 `Environment_DEV` & `Enviornment_PROD` 填寫 TMDB 的 Access Token
+正常情況下不會採用這種方式來放置Token，現階段暫無製作登入取得Token的計畫，因此先採用此種方式來進行。~~
 
 請透過 
 ```
