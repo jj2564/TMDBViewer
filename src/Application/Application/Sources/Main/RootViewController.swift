@@ -53,7 +53,7 @@ class RootViewController: BaseViewController {
                 if success {
                     self.toNowPlaying()
                 } else {
-                    toLogin()
+                    self.toLogin()
                 }
             }
             
