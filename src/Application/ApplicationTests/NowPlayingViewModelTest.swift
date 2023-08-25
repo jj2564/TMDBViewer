@@ -34,7 +34,7 @@ class NowPlayingViewModelTest: XCTestCase {
         let movie1 = Movie(title: "Test Movie 1")
         let movie2 = Movie(title: "Test Movie 2")
         
-        let mockPlaying = NowPlaying(dates: nil, page: 1, results: [movie1, movie2], totalPages: 1, totalResults: 2)
+        let mockPlaying = MovieListSummary(dates: nil, page: 1, results: [movie1, movie2], totalPages: 1, totalResults: 2)
         mockMoviesRepository.mockNowPlaying = mockPlaying
         
         // 當
