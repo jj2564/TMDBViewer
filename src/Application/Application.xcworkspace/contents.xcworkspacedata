@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/s409896/Desktop/Practice/TMDBViewer/src/Application/Application.xcodeproj">
+      location = "group:Application.xcodeproj">
    </FileRef>
    <Group
       location = "container:"
@@ -45,7 +45,7 @@
          location = "group:../02.Infrastructure/Infrastructure.HttpClient.Curl/Infrastructure.HttpClient.Curl.xcodeproj">
       </FileRef>
       <FileRef
-         location = "absolute:/Users/s409896/Desktop/Practice/TMDBViewer/src/02.Infrastructure/Infrastructure.HttpClient.Curl/../Infrastructure.DataStorage/Infrastructure.DataStorage.xcodeproj">
+         location = "group:../02.Infrastructure/Infrastructure.DataStorage/Infrastructure.DataStorage.xcodeproj">
       </FileRef>
       <FileRef
          location = "group:../02.Infrastructure/Infrastructure.DataStorage.Hosting/Infrastructure.DataStorage.Hosting.xcodeproj">
