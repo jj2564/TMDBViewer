@@ -11,13 +11,13 @@ import TMDB_Movies_Core
 
 class MockMoviesRepository: MoviesRepository {
     
-    var mockNowPlaying: NowPlaying?
+    var mockNowPlaying: MovieListSummary?
     
-    func findPlayingList(by page: Int) throws -> NowPlaying? {
+    func findPlayingList(by page: Int) throws -> MovieListSummary? {
         return mockNowPlaying
     }
     
-    func findMovieDetail(by id: String) throws -> TMDB_Movies_Core.Movie? {
+    func findMovieDetail(by id: String) throws -> Movie? {
         nil
     }
     
