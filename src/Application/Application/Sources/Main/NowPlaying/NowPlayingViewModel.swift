@@ -25,7 +25,11 @@ class NowPlayingViewModel: BaseViewModel {
     required init() {
         super.init()
         
+        layoutViewModel.didUpdateRowCount = { [weak self] _ in
+            self?.updateView?()
+        }
     }
+    
     
     
     //MARK: - Properties
@@ -36,6 +40,11 @@ class NowPlayingViewModel: BaseViewModel {
     // bonus info
     public var totalPage: Int? { nowPlaying?.totalPages }
     public var totalResult: Int? { nowPlaying?.totalResults }
+    
+    // barItem viewModel
+    public let layoutViewModel = ToggleLayoutButtonViewModel()
+    
+    public var perRowCount: Int { layoutViewModel.currentCount }
     
     
     //MARK: - Methods

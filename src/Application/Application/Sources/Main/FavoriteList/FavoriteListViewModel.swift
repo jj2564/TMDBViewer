@@ -23,6 +23,10 @@ class FavoriteListViewModel: BaseViewModel {
     required init() {
         super.init()
         fetchUserSortStyle()
+        
+        layoutViewModel.didUpdateRowCount = { [weak self] _ in
+            self?.updateView?()
+        }
     }
     
     
@@ -36,6 +40,11 @@ class FavoriteListViewModel: BaseViewModel {
     
     public var sortBy: MovieCardSortStyle = .releaseDate
     public var showList: [MovieCardViewModel] = []
+    
+    // barItem viewModel
+    public let layoutViewModel = ToggleLayoutButtonViewModel()
+    
+    public var perRowCount: Int { layoutViewModel.currentCount }
     
     
     //MARK: - Methods

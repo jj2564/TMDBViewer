@@ -13,6 +13,7 @@ class NowPlayingViewController: BaseViewController {
     //MARK: - Fields
     private lazy var nowPlayingView = NowPlayingView(viewModel: viewModel)
     private let viewModel = NowPlayingViewModel()
+    private let layoutButton = ToggleLayoutButton()
     
     
     //MARK: - Constructors
@@ -51,8 +52,11 @@ class NowPlayingViewController: BaseViewController {
             toFavorList()
         }
         
+        let layout = UIBarButtonItem(customView: layoutButton)
+        layoutButton.viewModel = viewModel.layoutViewModel
+        
         navigationItem.leftBarButtonItems = [search]
-        navigationItem.rightBarButtonItems = [favor]
+        navigationItem.rightBarButtonItems = [favor, layout]
     }
     
     private func toSearchMovie() {

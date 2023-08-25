@@ -28,6 +28,12 @@ class SearchMovieViewModel: BaseViewModel {
     public var queryText: String? = nil
     
     
+    // barItem viewModel
+    public let layoutViewModel = ToggleLayoutButtonViewModel()
+    
+    public var perRowCount: Int { layoutViewModel.currentCount }
+    
+    
     //MARK: - Methods
     public func search(by query: String, completion: (() -> Void)?  = nil) {
         

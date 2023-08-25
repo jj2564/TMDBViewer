@@ -14,7 +14,13 @@ class SearchMovieView: BaseView<SearchMovieViewModel> {
     //MARK: - Fields
     private lazy var searchView = createSearchView()
     private lazy var searchBar = createSearchBar()
-    private lazy var tableView = createTableView()
+    private let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        return UICollectionView(frame: .zero, collectionViewLayout: layout)
+    }()
+    
+    private var rowCount: Int { viewModel.perRowCount }
     
     
     //MARK: - Constructors
@@ -25,7 +31,8 @@ class SearchMovieView: BaseView<SearchMovieViewModel> {
     
     override func updateView() {
         
-        tableView.reloadData()
+        collectionView.reloadData()
+        updateCollectionLayout()
         nodataView.isHidden = (viewModel.movieList.count > 0)
     }
     
@@ -43,13 +50,34 @@ class SearchMovieView: BaseView<SearchMovieViewModel> {
     private func setupViews() {
         
         addSubview(searchView)
-        addSubview(tableView)
+        addSubview(collectionView)
+        
+        setupCollectionView()
         
         searchView.edgesToSuperview(excluding: .bottom)
-        tableView.edgesToSuperview(excluding: .top)
+        collectionView.edgesToSuperview(excluding: .top)
         
-        searchView.bottomToTop(of: tableView)
+        searchView.bottomToTop(of: collectionView)
         
+    }
+    
+    
+    private func setupCollectionView() {
+        
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .clear
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        collectionView.registerCell(UICollectionViewCell.self)
+        collectionView.registerCell(MovieCardCollectionCell.self)
+        
+    }
+    
+    // TODO: - 精細計算圖片跟高度
+    private func updateCollectionLayout() {
+        collectionView.collectionViewLayout.updateLayout(rowCount: rowCount)
     }
     
 }
@@ -85,43 +113,38 @@ extension SearchMovieView: UITextFieldDelegate {
     
 }
 
-extension SearchMovieView: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+extension SearchMovieView: UICollectionViewDataSource {
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel.movieList.count
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
         if let movie = viewModel.movieList[safe: indexPath.row] {
-            let cell = tableView.dequeueCell(MovieCardCell.self, indexPath: indexPath)
-            
+            let cell = collectionView.dequeueCell(MovieCardCollectionCell.self, indexPath: indexPath)
             let cardViewModel = MovieCardViewModel()
             cardViewModel.movie = movie
             cell.viewModel = cardViewModel
-            
             return cell
         }
-        
-        return tableView.dequeueCell(UITableViewCell.self)
+
+        return UICollectionViewCell()
     }
-    
+
 }
 
+extension SearchMovieView: UICollectionViewDelegate {
 
-extension SearchMovieView: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let index = indexPath.row
         if let movie = viewModel.movieList[safe: index] {
             let vc = MovieDetailViewController()
             vc.movie = movie
             parentViewController?.pushViewController(vc)
         }
-        
     }
-    
 }
 
 extension SearchMovieView {
@@ -175,26 +198,6 @@ extension SearchMovieView {
     
     @objc private func cancelButtonPressed() {
         parentViewController?.navigationController?.popViewController(animated: true)
-    }
-    
-    private func createTableView() -> UITableView {
-        
-        let tableView = UITableView()
-        
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.separatorStyle = .none
-        tableView.estimatedRowHeight = 300
-        tableView.rowHeight = UITableView.automaticDimension
-        
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.backgroundColor = .clear
-        
-        tableView.registerCell(UITableViewCell.self)
-        tableView.registerCell(MovieCardCell.self)
-        
-        return tableView
-        
     }
     
 }

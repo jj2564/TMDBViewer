@@ -13,7 +13,13 @@ class NowPlayingView: BaseView<NowPlayingViewModel> {
     
     
     //MARK: - Fields
-    private let tableView = UITableView()
+    private let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        return UICollectionView(frame: .zero, collectionViewLayout: layout)
+    }()
+
+    private var rowCount: Int { viewModel.perRowCount }
     
     private var isLoadingMore = false
     
@@ -21,7 +27,12 @@ class NowPlayingView: BaseView<NowPlayingViewModel> {
     //MARK: - Constructors
     override func initEvent() {
         backgroundColor = .neutral95
-        setupTableView()
+        setupCollectionView()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        updateCollectionLayout()
     }
     
     
@@ -32,7 +43,8 @@ class NowPlayingView: BaseView<NowPlayingViewModel> {
     override func updateView() {
         
         isLoadingMore = false
-        tableView.reloadData()
+        updateCollectionLayout()
+        collectionView.reloadData()
         nodataView.isHidden = (viewModel.movieList.count > 0)
         
     }
@@ -45,62 +57,58 @@ class NowPlayingView: BaseView<NowPlayingViewModel> {
         }
     }
     
-    private func setupTableView() {
+    private func setupCollectionView() {
         
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.separatorStyle = .none
-        tableView.estimatedRowHeight = 300
-        tableView.rowHeight = UITableView.automaticDimension
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .clear
         
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.backgroundColor = .clear
+        collectionView.dataSource = self
+        collectionView.delegate = self
         
-        tableView.registerCell(UITableViewCell.self)
-        tableView.registerCell(MovieCardCell.self)
+        collectionView.registerCell(UICollectionViewCell.self)
+        collectionView.registerCell(MovieCardCollectionCell.self)
         
-        addSubview(tableView)
-        tableView.edgesToSuperview()
+        addSubview(collectionView)
+        collectionView.edgesToSuperview()
+    }
+    
+    
+    private func updateCollectionLayout() {
+        collectionView.collectionViewLayout.updateLayout(rowCount: rowCount)
     }
     
 }
 
-extension NowPlayingView: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension NowPlayingView: UICollectionViewDataSource {
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel.movieList.count
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         loadMoreDataIfNeeded(from: indexPath)
-        
+
         if let movie = viewModel.movieList[safe: indexPath.row] {
-            let cell = tableView.dequeueCell(MovieCardCell.self, indexPath: indexPath)
-            
+            let cell = collectionView.dequeueCell(MovieCardCollectionCell.self, indexPath: indexPath)
             let cardViewModel = MovieCardViewModel()
             cardViewModel.movie = movie
             cell.viewModel = cardViewModel
-            
             return cell
         }
-        
-        return tableView.dequeueCell(UITableViewCell.self)
+
+        return UICollectionViewCell()
     }
-    
+
 }
 
+extension NowPlayingView: UICollectionViewDelegate {
 
-extension NowPlayingView: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let index = indexPath.row
         if let movie = viewModel.movieList[safe: index] {
             let vc = MovieDetailViewController()
             vc.movie = movie
             parentViewController?.pushViewController(vc)
         }
-        
     }
-    
 }

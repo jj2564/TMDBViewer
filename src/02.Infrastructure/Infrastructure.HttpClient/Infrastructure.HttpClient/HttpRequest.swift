@@ -12,7 +12,7 @@ public struct HttpRequest{
     
     //MARK: - Constructors
     public init(url: String, headers: HttpHeaders, content: Data){
-        self.url = url
+        self.url = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? url
         self.headers = headers
         self.content = content
     }

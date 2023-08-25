@@ -67,3 +67,14 @@ func showToaster(_ text: String) {
     }
     
 }
+
+var isIphone: Bool {
+    
+    switch UIDevice.current.userInterfaceIdiom {
+    case .phone:
+        return true
+    default:
+        return false
+    }
+    
+}

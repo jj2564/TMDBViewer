@@ -79,7 +79,7 @@ class MovieCardView: BaseView<MovieCardViewModel> {
         container.tapEnable = false
         
         addSubview(container)
-        container.edgesToSuperview(insets: .init(top: 8, left: 8, bottom: 8, right: 8))
+        container.edgesToSuperview(insets: .init(top: 0, left: 0, bottom: 0, right: 0))
         
         container.addSubview(backView)
         backView.edgesToSuperview()
@@ -88,14 +88,8 @@ class MovieCardView: BaseView<MovieCardViewModel> {
         kfImageView.imageRatio = 0.5
         
         nameLabel.font = .title_m
-        nameLabel.numberOfLines = 0
-        nameLabel.setContentHuggingPriority(.init(1000), for: .horizontal)
         
         dateLabel.font = .text_m
-        dateLabel.numberOfLines = 0
-        dateLabel.textAlignment = .right
-        dateLabel.setContentHuggingPriority(.init(750), for: .horizontal)
-        dateLabel.setContentCompressionResistancePriority(.init(1000), for: .horizontal)
         
         summaryLabel.font = .text_s
         summaryLabel.numberOfLines = 1
@@ -123,10 +117,10 @@ class MovieCardView: BaseView<MovieCardViewModel> {
         
         let vfls: VFLDictionary = [
             "H:|-(0)-[image]-(0)-|": nil,
-            "H:|-(16)-[name]-(8)-[date]-(16)-|": nil,
+            "H:|-(16)-[name]-(16)-|": nil,
+            "H:|-(16)-[date]-(16)-|": nil,
             "H:|-(16)-[sum]-(16)-|": nil,
-            "V:|-(0)-[image]-(12)-[name]-(6)-[sum(15)]-(8)-|": nil,
-            "V:[image]-(14)-[date]": nil
+            "V:|-(0)-[image]-(12)-[name]-(6)-[date]-(6)-[sum(15)]-(8)-|": nil
         ]
         
         let constraints = constraintsArrayVFL(vfls, views: views)

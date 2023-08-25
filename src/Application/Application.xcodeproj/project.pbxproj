@@ -87,6 +87,10 @@
 		9D9EDEBA2A888F2800BBDE7D /* TMDB_Movies_Hosting.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9EDEB82A888F2800BBDE7D /* TMDB_Movies_Hosting.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9D9EDEC12A88B32300BBDE7D /* ConetextFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9EDEC02A88B32300BBDE7D /* ConetextFactoryTest.swift */; };
 		9DC0CE422A98B02900CE8F98 /* UrlSchemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0CE412A98B02900CE8F98 /* UrlSchemeHelper.swift */; };
+		9DC0CE442A98D6C500CE8F98 /* MovieCardCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0CE432A98D6C500CE8F98 /* MovieCardCollectionCell.swift */; };
+		9DC0CE472A98DD5100CE8F98 /* ToggleLayoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0CE462A98DD5100CE8F98 /* ToggleLayoutButton.swift */; };
+		9DC0CE492A98DEED00CE8F98 /* ToggleLayoutButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0CE482A98DEED00CE8F98 /* ToggleLayoutButtonViewModel.swift */; };
+		9DF201792A98F1F80046EB3B /* UICollectionViewFlowLayout+UpdateLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF201782A98F1F80046EB3B /* UICollectionViewFlowLayout+UpdateLayout.swift */; };
 		9DFC28032A8B82C7006E6741 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 9DFC28022A8B82C7006E6741 /* KeychainAccess */; };
 		9DFC28062A8B83AC006E6741 /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC28052A8B83AC006E6741 /* NowPlayingViewController.swift */; };
 		9DFC28082A8B8422006E6741 /* NowPlayingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC28072A8B8422006E6741 /* NowPlayingViewModel.swift */; };
@@ -270,6 +274,10 @@
 		9D9EDEC02A88B32300BBDE7D /* ConetextFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConetextFactoryTest.swift; sourceTree = "<group>"; };
 		9D9EDEC22A88B9A500BBDE7D /* Infrastructure_DataStorage_RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Infrastructure_DataStorage_RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DC0CE412A98B02900CE8F98 /* UrlSchemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlSchemeHelper.swift; sourceTree = "<group>"; };
+		9DC0CE432A98D6C500CE8F98 /* MovieCardCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCardCollectionCell.swift; sourceTree = "<group>"; };
+		9DC0CE462A98DD5100CE8F98 /* ToggleLayoutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleLayoutButton.swift; sourceTree = "<group>"; };
+		9DC0CE482A98DEED00CE8F98 /* ToggleLayoutButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleLayoutButtonViewModel.swift; sourceTree = "<group>"; };
+		9DF201782A98F1F80046EB3B /* UICollectionViewFlowLayout+UpdateLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewFlowLayout+UpdateLayout.swift"; sourceTree = "<group>"; };
 		9DFC28052A8B83AC006E6741 /* NowPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
 		9DFC28072A8B8422006E6741 /* NowPlayingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewModel.swift; sourceTree = "<group>"; };
 		9DFC28092A8B843A006E6741 /* NowPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingView.swift; sourceTree = "<group>"; };
@@ -482,6 +490,7 @@
 		9D6BF8F32A91DCB000408A85 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9DC0CE452A98DB7300CE8F98 /* ToggleLayoutButton */,
 				9D6BF9102A923C0200408A85 /* SearchBar */,
 				9D6BF8F72A91FE5400408A85 /* MovieCard */,
 				9D6BF8F42A91DCC500408A85 /* FavorButton */,
@@ -502,6 +511,7 @@
 		9D6BF8F72A91FE5400408A85 /* MovieCard */ = {
 			isa = PBXGroup;
 			children = (
+				9DC0CE432A98D6C500CE8F98 /* MovieCardCollectionCell.swift */,
 				9DFC28392A8F3BEE006E6741 /* MovieCardCell.swift */,
 				9DFC280E2A8CD83E006E6741 /* MovieCardView.swift */,
 				9DFC28102A8CDB85006E6741 /* MovieCardViewModel.swift */,
@@ -614,6 +624,7 @@
 				9D9EDDDD2A87F82100BBDE7D /* UIApplication+RootViewController.swift */,
 				9D9EDDDB2A87F82100BBDE7D /* UIApplication+Window.swift */,
 				9D9EDDDC2A87F82100BBDE7D /* UICollectionView+Cell.swift */,
+				9DF201782A98F1F80046EB3B /* UICollectionViewFlowLayout+UpdateLayout.swift */,
 				9D9EDDD72A87F82100BBDE7D /* UIColor+Hex.swift */,
 				9D9EDDD52A87F82100BBDE7D /* UIColor+Theme.swift */,
 				9D9EDDD82A87F82100BBDE7D /* UIFont+Theme.swift */,
@@ -671,6 +682,15 @@
 				9D9EDE102A887A9500BBDE7D /* UIHiddenView.swift */,
 			);
 			path = UIHiddenView;
+			sourceTree = "<group>";
+		};
+		9DC0CE452A98DB7300CE8F98 /* ToggleLayoutButton */ = {
+			isa = PBXGroup;
+			children = (
+				9DC0CE462A98DD5100CE8F98 /* ToggleLayoutButton.swift */,
+				9DC0CE482A98DEED00CE8F98 /* ToggleLayoutButtonViewModel.swift */,
+			);
+			path = ToggleLayoutButton;
 			sourceTree = "<group>";
 		};
 		9DFC28042A8B82F3006E6741 /* NowPlaying */ = {
@@ -892,6 +912,7 @@
 				9D6BF9292A93895A00408A85 /* MovieCardSortStyle.swift in Sources */,
 				9D9EDE042A87FF4B00BBDE7D /* UIView+ParentViewController.swift in Sources */,
 				9D9EDDBD2A87F54200BBDE7D /* BaseNavigationController.swift in Sources */,
+				9DC0CE442A98D6C500CE8F98 /* MovieCardCollectionCell.swift in Sources */,
 				9D9EDDE72A87F82100BBDE7D /* UICollectionView+Cell.swift in Sources */,
 				9D9EDDBF2A87F54200BBDE7D /* BaseView.swift in Sources */,
 				9D9EDDD02A87F73700BBDE7D /* LoadingView.swift in Sources */,
@@ -902,6 +923,7 @@
 				9D9EDDE22A87F82100BBDE7D /* UIColor+Hex.swift in Sources */,
 				9D6BF9142A923D0300408A85 /* ClearButtonTextField.swift in Sources */,
 				9DFC28742A90C6BC006E6741 /* ToggleButton.swift in Sources */,
+				9DF201792A98F1F80046EB3B /* UICollectionViewFlowLayout+UpdateLayout.swift in Sources */,
 				9DFC28652A906F34006E6741 /* MovieDetailView.swift in Sources */,
 				9DFC28202A8E201D006E6741 /* Images.swift in Sources */,
 				9DFC28762A90C83C006E6741 /* ToggleFavorButton.swift in Sources */,
@@ -918,6 +940,7 @@
 				9D6BF92B2A944B3800408A85 /* LoginView.swift in Sources */,
 				9D6BF8F22A91DC4500408A85 /* FavoriteListView.swift in Sources */,
 				9D9EDDE82A87F82100BBDE7D /* UIApplication+RootViewController.swift in Sources */,
+				9DC0CE472A98DD5100CE8F98 /* ToggleLayoutButton.swift in Sources */,
 				9DFC28062A8B83AC006E6741 /* NowPlayingViewController.swift in Sources */,
 				9D35D98D2A89B36C004AF453 /* ContextFactoryRegister.swift in Sources */,
 				9DFC28222A8E25CC006E6741 /* Date+Calendar.swift in Sources */,
@@ -930,6 +953,7 @@
 				9D6BF90D2A92356300408A85 /* SearchMovieViewModel.swift in Sources */,
 				9D9EDDDE2A87F82100BBDE7D /* Double+ZeroFractoin.swift in Sources */,
 				9DFC28672A906F42006E6741 /* MovieDetailViewModel.swift in Sources */,
+				9DC0CE492A98DEED00CE8F98 /* ToggleLayoutButtonViewModel.swift in Sources */,
 				9D9EDDE42A87F82100BBDE7D /* Optional+IsNil.swift in Sources */,
 				9D6BF9162A92F6F600408A85 /* KFImageContainerViewModel.swift in Sources */,
 				9DFC280A2A8B843A006E6741 /* NowPlayingView.swift in Sources */,

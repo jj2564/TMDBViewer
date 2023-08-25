@@ -13,6 +13,7 @@ class FavoriteListViewController: BaseViewController {
     //MARK: - Fields
     private lazy var favorView = FavoriteListView(viewModel: viewModel)
     private let sort = SYBarButton(type: .sort)
+    private let layoutButton = ToggleLayoutButton()
     
     
     //MARK: - Constructors
@@ -48,7 +49,10 @@ class FavoriteListViewController: BaseViewController {
             showSortOption()
         }
         
-        navigationItem.rightBarButtonItems = [sort]
+        let layout = UIBarButtonItem(customView: layoutButton)
+        layoutButton.viewModel = viewModel.layoutViewModel
+        
+        navigationItem.rightBarButtonItems = [sort, layout]
         
     }
     

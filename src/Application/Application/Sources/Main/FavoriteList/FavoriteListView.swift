@@ -12,13 +12,25 @@ class FavoriteListView: BaseView<FavoriteListViewModel> {
     
     
     //MARK: - Fields
-    private let tableView = UITableView()
+    private let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        return UICollectionView(frame: .zero, collectionViewLayout: layout)
+    }()
+    
+    private var rowCount: Int { viewModel.perRowCount }
+    
     
     
     //MARK: - Constructors
     override func initEvent() {
         backgroundColor = .neutral95
-        setupTableView()
+        setupCollectionView()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        updateCollectionLayout()
     }
     
     
@@ -28,58 +40,58 @@ class FavoriteListView: BaseView<FavoriteListViewModel> {
     //MARK: - Methods
     override func updateView() {
         
-        tableView.reloadData()
+        updateCollectionLayout()
+        collectionView.reloadData()
         nodataView.isHidden = (viewModel.movieViewModelList.count > 0)
     }
     
-    private func setupTableView() {
+    private func setupCollectionView() {
         
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.separatorStyle = .none
-        tableView.estimatedRowHeight = 300
-        tableView.rowHeight = UITableView.automaticDimension
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .clear
         
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.backgroundColor = .clear
+        collectionView.dataSource = self
+        collectionView.delegate = self
         
-        tableView.registerCell(UITableViewCell.self)
-        tableView.registerCell(MovieCardCell.self)
+        collectionView.registerCell(UICollectionViewCell.self)
+        collectionView.registerCell(MovieCardCollectionCell.self)
         
-        addSubview(tableView)
-        tableView.edgesToSuperview()
+        addSubview(collectionView)
+        collectionView.edgesToSuperview()
+    }
+    
+    // TODO: - 精細計算圖片跟高度
+    private func updateCollectionLayout() {
+        collectionView.collectionViewLayout.updateLayout(rowCount: rowCount)
     }
     
 }
 
 
-extension FavoriteListView: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension FavoriteListView: UICollectionViewDataSource {
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel.showList.count
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
         if let vm = viewModel.showList[safe: indexPath.row] {
-            let cell = tableView.dequeueCell(MovieCardCell.self, indexPath: indexPath)
+            let cell = collectionView.dequeueCell(MovieCardCollectionCell.self, indexPath: indexPath)
             
             cell.viewModel = vm
             vm.fetchData()
-            
             return cell
         }
-        
-        return tableView.dequeueCell(UITableViewCell.self)
+
+        return UICollectionViewCell()
     }
-    
+
 }
 
+extension FavoriteListView: UICollectionViewDelegate {
 
-extension FavoriteListView: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let index = indexPath.row
         if let vm = viewModel.showList[safe: index] {
             let vc = MovieDetailViewController()
