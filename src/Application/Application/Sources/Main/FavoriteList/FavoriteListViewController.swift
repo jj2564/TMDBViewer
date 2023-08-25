@@ -12,7 +12,7 @@ class FavoriteListViewController: BaseViewController {
     
     //MARK: - Fields
     private lazy var favorView = FavoriteListView(viewModel: viewModel)
-    public let viewModel = FavoriteListViewModel()
+    private let sort = SYBarButton(type: .sort)
     
     
     //MARK: - Constructors
@@ -32,6 +32,7 @@ class FavoriteListViewController: BaseViewController {
     
     
     //MARK: - Properties
+    public let viewModel = FavoriteListViewModel()
     
     
     //MARK: - Methods
@@ -42,7 +43,7 @@ class FavoriteListViewController: BaseViewController {
     
     private func setupNavigationItem() {
         
-        let sort = SYBarButton(type: .sort)
+        
         sort.onPressed = { [unowned self] _ in
             showSortOption()
         }
@@ -56,6 +57,12 @@ class FavoriteListViewController: BaseViewController {
         let list = MovieCardSortStyle.allCases
         
         let alert = UIAlertController(title: "請選擇排序方式", message: nil, preferredStyle: .actionSheet)
+        
+        if let popoverController = alert.popoverPresentationController {
+            popoverController.sourceView = self.view
+            popoverController.barButtonItem = sort
+            popoverController.permittedArrowDirections = .up
+        }
         
         for sort in list {
             let action = UIAlertAction(title: sort.rawValue, style: .default) { [unowned self] _ in

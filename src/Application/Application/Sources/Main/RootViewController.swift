@@ -41,22 +41,24 @@ class RootViewController: BaseViewController {
     //MARK: - Methods
     private func checkKeychain() {
         
+        
         let keychain = Keychain(service: "com.example.irving")
-        
-        let token = keychain["UKnowWho"]
-        
-        if let token {
-            
-            checkAuth(token: token) { [weak self] success in
+
+        let apiId = keychain["apiId"]
+        let sessionId = keychain["sessionId"]
+
+        if let apiId, let sessionId {
+
+            checkSessionId(apiId: apiId, sessionId: sessionId) { [weak self] success in
                 guard let `self` = self else { return }
-                
+
                 if success {
                     self.toNowPlaying()
                 } else {
                     self.toLogin()
                 }
             }
-            
+
         } else {
             toLogin()
         }
@@ -68,6 +70,19 @@ class RootViewController: BaseViewController {
         
         AsyncHelper().excute { [unowned self] in
             try authRepository?.authentication(token: token)
+        } completion: { result in
+            let success = (result == true)
+            completion?(success)
+        } error: { _ in
+            completion?(false)
+        }
+        
+    }
+    
+    private func checkSessionId(apiId: String, sessionId: String, completion: ((Bool) -> Void)?  = nil) {
+        
+        AsyncHelper().excute { [unowned self] in
+            try authRepository?.authId(apiId: apiId, sessionId: sessionId)
         } completion: { result in
             let success = (result == true)
             completion?(success)

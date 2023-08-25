@@ -35,7 +35,8 @@ public class RestPhotoRepository: PhotosRepository {
         
         // create url
         guard let service = httpClient?.serviceUrl else { throw "URL Error" }
-        let url = service + endpoint + "\(movieId)" + "/images"
+        guard let session = httpClient?.sessionString else { throw "Session Error" }
+        let url = service + endpoint + "\(movieId)" + "/images" + "&\(session)"
         
         // respone
         let response = try getResponse(httpClient, url: url)

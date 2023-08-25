@@ -16,3 +16,4 @@ APP_DISPLAY_NAME = 開發版_TV
 
 APP_SERVICE_URL = https:/$()/api.themoviedb.org/3/
 
+APP_URL_SCHEME = tmdbviewerdev

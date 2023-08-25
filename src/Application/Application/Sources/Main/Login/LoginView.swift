@@ -44,7 +44,7 @@ class LoginView: BaseView<LoginViewModel> {
         label.textColor = .secondary30
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.text = "請輸入您的 TMDB token，本程式會幫您存入 Keychain 之中，請放心輸入。"
+        label.text = "請輸入您的 API ID，本程式會幫您存入 Keychain 之中，請放心輸入。"
         
         addSubview(label)
         label.leftToSuperview(offset: 20)
@@ -58,7 +58,7 @@ class LoginView: BaseView<LoginViewModel> {
         textField.textColor = .neutral100
         textField.autocapitalizationType = .none
         textField.attributedPlaceholder = NSAttributedString(
-            string: "請在此輸入Token",
+            string: "請在此輸入API ID",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.neutral99]
         )
         
@@ -92,10 +92,10 @@ class LoginView: BaseView<LoginViewModel> {
     
     @objc private func didPressedLogin() {
         
-        if let token = textField.text, token.count > 10 {
-            viewModel.setAccessToken(token)
+        if let apiId = textField.text, apiId.count > 10 {
+            viewModel.setApiID(apiId)
         } else {
-            showToaster("請輸入Token~")
+            showToaster("請輸入API ID~")
         }
         
     }

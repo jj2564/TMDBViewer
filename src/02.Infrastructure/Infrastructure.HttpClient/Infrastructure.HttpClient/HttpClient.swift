@@ -15,6 +15,8 @@ open class HttpClient {
     
     public private(set) var serviceUrl: String = ""
     
+    public private(set) var sessionString: String = ""
+    
     
     //MARK: - Constructors
     public required init(httpClientProvider: HttpClientProvider) {
@@ -39,6 +41,10 @@ open class HttpClient {
     
     open func setServiceUrl(_ urlString: String) {
         self.serviceUrl = urlString
+    }
+    
+    open func setSessionString(_ sessionString: String) {
+        self.sessionString = sessionString
     }
     
 }

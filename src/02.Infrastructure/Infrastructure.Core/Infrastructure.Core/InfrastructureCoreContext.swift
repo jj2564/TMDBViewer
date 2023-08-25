@@ -42,6 +42,11 @@ public class InfrastructureCoreContext {
         }
         self.serviceUrl = serviceUrl
         
+        guard let urlScheme = infoDictionary["UrlScheme"] as? String else {
+            fatalError("Doesn't have Service URL")
+        }
+        self.urlScheme = urlScheme
+        
     }
     
     
@@ -49,6 +54,8 @@ public class InfrastructureCoreContext {
     public var mode: Mode = .PROD
     
     public var serviceUrl: String = ""
+    
+    public var urlScheme: String = ""
     
     
 }

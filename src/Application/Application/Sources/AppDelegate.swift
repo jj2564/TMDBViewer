@@ -63,6 +63,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
     }
+    
+    // MARK: - URL Scheme
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+
+        URLSchemeHelper.shared.setbyURL(url: url)
+        
+        return true
+    }
 
 }
 

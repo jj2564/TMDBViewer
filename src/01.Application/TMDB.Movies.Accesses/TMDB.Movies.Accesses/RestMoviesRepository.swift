@@ -32,7 +32,8 @@ public class RestMoviesRepository: MoviesRepository {
         
         // create url
         guard let service = httpClient?.serviceUrl else { throw "URL Error" }
-        let url = service + endpoint + "now_playing?page=\(page)&" + language
+        guard let session = httpClient?.sessionString else { throw "Session Error" }
+        let url = service + endpoint + "now_playing?page=\(page)&" + language + "&\(session)"
         
         // respone
         let response = try getResponse(httpClient, url: url)
@@ -46,7 +47,8 @@ public class RestMoviesRepository: MoviesRepository {
         
         // create url
         guard let service = httpClient?.serviceUrl else { throw "URL Error" }
-        let url = service + endpoint + "\(id)?" + language
+        guard let session = httpClient?.sessionString else { throw "Session Error" }
+        let url = service + endpoint + "\(id)?" + language + "&\(session)"
         
         // respone
         let response = try getResponse(httpClient, url: url)
@@ -59,7 +61,8 @@ public class RestMoviesRepository: MoviesRepository {
         
         // create url
         guard let service = httpClient?.serviceUrl else { throw "URL Error" }
-        let url = service + "search/movie?" + language + "&" + "query=\(query)"
+        guard let session = httpClient?.sessionString else { throw "Session Error" }
+        let url = service + "search/movie?" + language + "&" + "query=\(query)" + "&\(session)"
         
         // response
         let response = try getResponse(httpClient, url: url)
