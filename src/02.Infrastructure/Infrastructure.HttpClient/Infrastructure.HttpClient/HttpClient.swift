@@ -22,7 +22,6 @@ open class HttpClient {
     public required init(httpClientProvider: HttpClientProvider) {
         self.httpClientProvider = httpClientProvider
         
-        customFormatter.dateFormat = "yyyy-MM-dd"
     }
     
     

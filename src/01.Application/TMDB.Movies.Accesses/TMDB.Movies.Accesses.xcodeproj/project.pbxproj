@@ -11,18 +11,19 @@
 		9D2C45012A8A4218001F106B /* Infrastructure_Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D2C44FF2A8A4218001F106B /* Infrastructure_Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9D6BF91E2A93069600408A85 /* RestPhotoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6BF91D2A93069600408A85 /* RestPhotoRepository.swift */; };
 		9D6BF9332A94888700408A85 /* RestAuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6BF9322A94888700408A85 /* RestAuthRepository.swift */; };
+		9D80448D2A99AAB7001C5F32 /* RestPhotoRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D80448C2A99AAB7001C5F32 /* RestPhotoRepositoryTests.swift */; };
+		9D80448F2A99AAE9001C5F32 /* MockHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D80448E2A99AAE9001C5F32 /* MockHttpClient.swift */; };
+		9D8044A52A99AD5C001C5F32 /* MockHttpClientProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8044A42A99AD5C001C5F32 /* MockHttpClientProvider.swift */; };
 		9D9EDE712A887CBE00BBDE7D /* TMDB_Movies_Accesses.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D9EDE652A887CBE00BBDE7D /* TMDB_Movies_Accesses.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D9EDEAC2A888DC000BBDE7D /* RestMoviesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9EDEAB2A888DC000BBDE7D /* RestMoviesRepository.swift */; };
 		9D9EDEB52A888E6700BBDE7D /* TMDB_Movies_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9EDEB22A888E6700BBDE7D /* TMDB_Movies_Core.framework */; };
 		9D9EDEB62A888E6700BBDE7D /* TMDB_Movies_Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9EDEB22A888E6700BBDE7D /* TMDB_Movies_Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9D9EDEBC2A888F7000BBDE7D /* Infrastructure_HttpClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9EDEBB2A888F7000BBDE7D /* Infrastructure_HttpClient.framework */; };
 		9D9EDEBD2A888F7000BBDE7D /* Infrastructure_HttpClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9EDEBB2A888F7000BBDE7D /* Infrastructure_HttpClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9DFC282A2A8E2638006E6741 /* TMDB_Movies_AccessesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC28292A8E2638006E6741 /* TMDB_Movies_AccessesTests.swift */; };
 		9DFC282B2A8E2638006E6741 /* TMDB_Movies_Accesses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9EDE622A887CBE00BBDE7D /* TMDB_Movies_Accesses.framework */; platformFilter = ios; };
-		9DFC28322A8E2682006E6741 /* NowPlayingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC28312A8E2682006E6741 /* NowPlayingTests.swift */; };
+		9DFC28322A8E2682006E6741 /* RestMoviesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC28312A8E2682006E6741 /* RestMoviesRepositoryTests.swift */; };
 		9DFC28342A8E26A4006E6741 /* TMDB_Movies_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFC28332A8E26A4006E6741 /* TMDB_Movies_Core.framework */; };
 		9DFC28362A8E272D006E6741 /* Infrastructure_HttpClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFC28352A8E272D006E6741 /* Infrastructure_HttpClient.framework */; };
-		9DFC28382A8E2877006E6741 /* Infrastructure_HttpClient_Curl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFC28372A8E2877006E6741 /* Infrastructure_HttpClient_Curl.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,9 @@
 		9D2C44FF2A8A4218001F106B /* Infrastructure_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Infrastructure_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D6BF91D2A93069600408A85 /* RestPhotoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestPhotoRepository.swift; sourceTree = "<group>"; };
 		9D6BF9322A94888700408A85 /* RestAuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAuthRepository.swift; sourceTree = "<group>"; };
+		9D80448C2A99AAB7001C5F32 /* RestPhotoRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestPhotoRepositoryTests.swift; sourceTree = "<group>"; };
+		9D80448E2A99AAE9001C5F32 /* MockHttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHttpClient.swift; sourceTree = "<group>"; };
+		9D8044A42A99AD5C001C5F32 /* MockHttpClientProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHttpClientProvider.swift; sourceTree = "<group>"; };
 		9D9EDE622A887CBE00BBDE7D /* TMDB_Movies_Accesses.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TMDB_Movies_Accesses.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9EDE652A887CBE00BBDE7D /* TMDB_Movies_Accesses.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMDB_Movies_Accesses.h; sourceTree = "<group>"; };
 		9D9EDEAB2A888DC000BBDE7D /* RestMoviesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestMoviesRepository.swift; sourceTree = "<group>"; };
@@ -62,8 +66,7 @@
 		9D9EDEB22A888E6700BBDE7D /* TMDB_Movies_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TMDB_Movies_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9EDEBB2A888F7000BBDE7D /* Infrastructure_HttpClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Infrastructure_HttpClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DFC28272A8E2638006E6741 /* TMDB_Movies_AccessesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TMDB_Movies_AccessesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9DFC28292A8E2638006E6741 /* TMDB_Movies_AccessesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB_Movies_AccessesTests.swift; sourceTree = "<group>"; };
-		9DFC28312A8E2682006E6741 /* NowPlayingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingTests.swift; sourceTree = "<group>"; };
+		9DFC28312A8E2682006E6741 /* RestMoviesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestMoviesRepositoryTests.swift; sourceTree = "<group>"; };
 		9DFC28332A8E26A4006E6741 /* TMDB_Movies_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TMDB_Movies_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DFC28352A8E272D006E6741 /* Infrastructure_HttpClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Infrastructure_HttpClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DFC28372A8E2877006E6741 /* Infrastructure_HttpClient_Curl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Infrastructure_HttpClient_Curl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,7 +87,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DFC28382A8E2877006E6741 /* Infrastructure_HttpClient_Curl.framework in Frameworks */,
 				9DFC28362A8E272D006E6741 /* Infrastructure_HttpClient.framework in Frameworks */,
 				9DFC28342A8E26A4006E6741 /* TMDB_Movies_Core.framework in Frameworks */,
 				9DFC282B2A8E2638006E6741 /* TMDB_Movies_Accesses.framework in Frameworks */,
@@ -141,8 +143,10 @@
 		9DFC28282A8E2638006E6741 /* TMDB_Movies_AccessesTests */ = {
 			isa = PBXGroup;
 			children = (
-				9DFC28292A8E2638006E6741 /* TMDB_Movies_AccessesTests.swift */,
-				9DFC28312A8E2682006E6741 /* NowPlayingTests.swift */,
+				9D80448E2A99AAE9001C5F32 /* MockHttpClient.swift */,
+				9D8044A42A99AD5C001C5F32 /* MockHttpClientProvider.swift */,
+				9DFC28312A8E2682006E6741 /* RestMoviesRepositoryTests.swift */,
+				9D80448C2A99AAB7001C5F32 /* RestPhotoRepositoryTests.swift */,
 			);
 			path = TMDB_Movies_AccessesTests;
 			sourceTree = "<group>";
@@ -268,8 +272,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DFC282A2A8E2638006E6741 /* TMDB_Movies_AccessesTests.swift in Sources */,
-				9DFC28322A8E2682006E6741 /* NowPlayingTests.swift in Sources */,
+				9D80448F2A99AAE9001C5F32 /* MockHttpClient.swift in Sources */,
+				9D80448D2A99AAB7001C5F32 /* RestPhotoRepositoryTests.swift in Sources */,
+				9DFC28322A8E2682006E6741 /* RestMoviesRepositoryTests.swift in Sources */,
+				9D8044A52A99AD5C001C5F32 /* MockHttpClientProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

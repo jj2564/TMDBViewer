@@ -26,6 +26,7 @@ public let headers: HttpHeaders = [
 // MARK: - Helper functions for creating encoders and decoders
 public func newJSONDecoder() -> JSONDecoder {
     let decoder = JSONDecoder()
+    customFormatter.dateFormat = "yyyy-MM-dd"
     
     decoder.dateDecodingStrategy = .custom { decoder -> Date in
         let container = try decoder.singleValueContainer()

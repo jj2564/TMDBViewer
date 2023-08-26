@@ -1,5 +1,5 @@
 //
-//  NowPlayingTests.swift
+//  RestMoviesRepositoryTests.swift
 //  TMDB_Movies_AccessesTests
 //
 //  Created by Irving Huang on 2023/8/17.
@@ -8,25 +8,12 @@
 import XCTest
 
 import Infrastructure_HttpClient
-import Infrastructure_HttpClient_Curl
 
 import TMDB_Movies_Accesses
 
-class MockHttpClient: HttpClient {
-    var mockResponse: HttpResponse?
+class RestMoviesRepositoryTests: XCTestCase {
     
-    override func get(_ request: HttpRequest) throws -> HttpResponse {
-        if let response = mockResponse {
-            return response
-        }
-        throw HttpError.networkError("Mocked error")
-    }
-}
-
-class NowPlayingTests: XCTestCase {
-    
-    let provider = CurlHttpClientProvider()
-    
+    let provider = MockHttpClientProvider()
     
     func testFindPlayingListSuccess() throws {
         
@@ -128,6 +115,53 @@ class NowPlayingTests: XCTestCase {
         // detail part
         XCTAssertEqual(result?.imdbId, "tt0001")
         XCTAssertEqual(result?.spokenLanguages?.first?.name, "日本語")
+    }
+    
+    func testFindMoviesByQuery() throws {
+        
+        // create mock
+        let mockHttpClient = MockHttpClient(httpClientProvider: provider)
+        
+        // Assuming a mock response for a search query "mockquery"
+        let mockResponseData = """
+        {
+          "page": 1,
+          "results": [
+            {
+              "adult": false,
+              "backdrop_path": "/mock.jpg",
+              "genre_ids": [
+                1,2,3
+              ],
+              "id": 1002,
+              "original_language": "en",
+              "original_title": "Mock Search Name",
+              "overview": "A mock movie for unit test from search",
+              "popularity": 1.1,
+              "poster_path": "/mocksearch.jpg",
+              "release_date": "2023-08-19",
+              "title": "Mock Search Name",
+              "video": false,
+              "vote_average": 9.8,
+              "vote_count": 998
+            }
+          ],
+          "total_pages": 1,
+          "total_results": 1
+        }
+        """.data(using: .utf8)!
+        
+        let httpResponse = HttpResponse(content: mockResponseData, statusCode: 200)
+        mockHttpClient.mockResponse = httpResponse
+        
+        let repository = RestMoviesRepository(mockHttpClient)
+        let result = try? repository.find(by: "mockquery")
+        
+        // Validate result
+        XCTAssertNotNil(result)
+        XCTAssertEqual(result?.page, 1)
+        XCTAssertEqual(result?.results?.first?.title, "Mock Search Name")
+        
     }
     
 }
