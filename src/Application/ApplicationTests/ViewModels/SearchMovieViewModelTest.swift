@@ -1,50 +1,49 @@
 //
-//  NowPlayingViewModelTest.swift
+//  SearchMovieViewModelTest.swift
 //  ApplicationTests
 //
-//  Created by Irving Huang on 2023/8/19.
+//  Created by Irving Huang on 2023/8/26.
 //
 
 import XCTest
 
-import Infrastructure_Hosting
 import TMDB_Movies_Core
 
 @testable import Application
 
-
-class NowPlayingViewModelTest: XCTestCase {
+class SearchMovieViewModelTest: XCTestCase {
     
-    var viewModel: NowPlayingViewModel!
+    var viewModel: SearchMovieViewModel!
     var mockMoviesRepository: MockMoviesRepository!
-    
     
     override func setUp() {
         super.setUp()
         
         mockMoviesRepository = MockMoviesRepository()
         
-        viewModel = NowPlayingViewModel()
+        viewModel = SearchMovieViewModel()
         viewModel.moviesRepository = mockMoviesRepository
         
     }
     
-    func testLoadMore_WithAvailableMovies_UpdatesMovieList() {
-        // 給定
+    func testSearch_WithQuery_ReturnsMovieList() {
+
+        let expectation = self.expectation(description: "Search query expectation")
+        
         let movie1 = Movie(title: "Test Movie 1")
         let movie2 = Movie(title: "Test Movie 2")
         
-        let mockPlaying = MovieListSummary(dates: nil, page: 1, results: [movie1, movie2], totalPages: 1, totalResults: 2)
-        mockMoviesRepository.mockNowPlaying = mockPlaying
+        let mockQueryList = MovieListSummary(dates: nil, page: 1, results: [movie1, movie2], totalPages: 1, totalResults: 2)
+        mockMoviesRepository.mockQueryList = mockQueryList
         
-        // 當
-        viewModel.loadMore() {
+        viewModel.search(by: "Test") {
             XCTAssertEqual(self.viewModel.movieList.count, 2)
-            
             XCTAssertEqual(self.viewModel.movieList[0].title, "Test Movie 1")
             XCTAssertEqual(self.viewModel.movieList[1].title, "Test Movie 2")
+            expectation.fulfill()
         }
         
+        waitForExpectations(timeout: 5.0, handler: nil)
         
     }
     

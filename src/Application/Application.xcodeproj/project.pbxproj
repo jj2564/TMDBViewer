@@ -45,9 +45,16 @@
 		9D6BF92D2A944B4700408A85 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6BF92C2A944B4700408A85 /* LoginViewModel.swift */; };
 		9D6BF92F2A944B5400408A85 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6BF92E2A944B5400408A85 /* LoginViewController.swift */; };
 		9D6BF9362A948D8800408A85 /* Toaster in Frameworks */ = {isa = PBXBuildFile; productRef = 9D6BF9352A948D8800408A85 /* Toaster */; };
+		9D80447B2A9994DB001C5F32 /* AsyncHelperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D80447A2A9994DB001C5F32 /* AsyncHelperTest.swift */; };
+		9D80447D2A999923001C5F32 /* MockFavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D80447C2A999923001C5F32 /* MockFavoriteService.swift */; };
+		9D80447F2A999939001C5F32 /* MockSettingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D80447E2A999939001C5F32 /* MockSettingService.swift */; };
+		9D8044812A9999E3001C5F32 /* FavoriteListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8044802A9999E3001C5F32 /* FavoriteListViewModelTest.swift */; };
+		9D8044832A999C1B001C5F32 /* SearchMovieViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8044822A999C1B001C5F32 /* SearchMovieViewModelTest.swift */; };
+		9D8044852A999CE0001C5F32 /* MovieDetailViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8044842A999CE0001C5F32 /* MovieDetailViewModelTest.swift */; };
+		9D8044872A999DBC001C5F32 /* ToggleLayoutButtonViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8044862A999DBC001C5F32 /* ToggleLayoutButtonViewModelTest.swift */; };
+		9D8044892A999F29001C5F32 /* ToggleFavorButtonViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8044882A999F29001C5F32 /* ToggleFavorButtonViewModelTest.swift */; };
 		9D9EDD992A879CD800BBDE7D /* Infrastructure_Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9EDD972A879CD800BBDE7D /* Infrastructure_Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9D9EDDA62A879F2D00BBDE7D /* Infrastructure_DataStorage_Hosting.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9EDDA42A879F2D00BBDE7D /* Infrastructure_DataStorage_Hosting.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9D9EDDAE2A87F41900BBDE7D /* ApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9EDDAD2A87F41900BBDE7D /* ApplicationTests.swift */; };
 		9D9EDDBB2A87F54200BBDE7D /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9EDDB62A87F54200BBDE7D /* BaseViewModel.swift */; };
 		9D9EDDBD2A87F54200BBDE7D /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9EDDB82A87F54200BBDE7D /* BaseNavigationController.swift */; };
 		9D9EDDBF2A87F54200BBDE7D /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9EDDBA2A87F54200BBDE7D /* BaseView.swift */; };
@@ -91,6 +98,10 @@
 		9DC0CE472A98DD5100CE8F98 /* ToggleLayoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0CE462A98DD5100CE8F98 /* ToggleLayoutButton.swift */; };
 		9DC0CE492A98DEED00CE8F98 /* ToggleLayoutButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC0CE482A98DEED00CE8F98 /* ToggleLayoutButtonViewModel.swift */; };
 		9DF201792A98F1F80046EB3B /* UICollectionViewFlowLayout+UpdateLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF201782A98F1F80046EB3B /* UICollectionViewFlowLayout+UpdateLayout.swift */; };
+		9DF2017E2A998B270046EB3B /* ArrayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF2017D2A998B270046EB3B /* ArrayTest.swift */; };
+		9DF201802A998BA60046EB3B /* DateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF2017F2A998BA60046EB3B /* DateTest.swift */; };
+		9DF201822A9991C70046EB3B /* DoubleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF201812A9991C70046EB3B /* DoubleTest.swift */; };
+		9DF201852A9992B90046EB3B /* OptionalTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF201842A9992B90046EB3B /* OptionalTest.swift */; };
 		9DFC28032A8B82C7006E6741 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 9DFC28022A8B82C7006E6741 /* KeychainAccess */; };
 		9DFC28062A8B83AC006E6741 /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC28052A8B83AC006E6741 /* NowPlayingViewController.swift */; };
 		9DFC28082A8B8422006E6741 /* NowPlayingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFC28072A8B8422006E6741 /* NowPlayingViewModel.swift */; };
@@ -233,10 +244,17 @@
 		9D6BF92A2A944B3800408A85 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9D6BF92C2A944B4700408A85 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		9D6BF92E2A944B5400408A85 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9D80447A2A9994DB001C5F32 /* AsyncHelperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncHelperTest.swift; sourceTree = "<group>"; };
+		9D80447C2A999923001C5F32 /* MockFavoriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFavoriteService.swift; sourceTree = "<group>"; };
+		9D80447E2A999939001C5F32 /* MockSettingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSettingService.swift; sourceTree = "<group>"; };
+		9D8044802A9999E3001C5F32 /* FavoriteListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListViewModelTest.swift; sourceTree = "<group>"; };
+		9D8044822A999C1B001C5F32 /* SearchMovieViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieViewModelTest.swift; sourceTree = "<group>"; };
+		9D8044842A999CE0001C5F32 /* MovieDetailViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModelTest.swift; sourceTree = "<group>"; };
+		9D8044862A999DBC001C5F32 /* ToggleLayoutButtonViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleLayoutButtonViewModelTest.swift; sourceTree = "<group>"; };
+		9D8044882A999F29001C5F32 /* ToggleFavorButtonViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleFavorButtonViewModelTest.swift; sourceTree = "<group>"; };
 		9D9EDD972A879CD800BBDE7D /* Infrastructure_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Infrastructure_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9EDDA42A879F2D00BBDE7D /* Infrastructure_DataStorage_Hosting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Infrastructure_DataStorage_Hosting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9EDDAB2A87F41900BBDE7D /* ApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D9EDDAD2A87F41900BBDE7D /* ApplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationTests.swift; sourceTree = "<group>"; };
 		9D9EDDB62A87F54200BBDE7D /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		9D9EDDB82A87F54200BBDE7D /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		9D9EDDBA2A87F54200BBDE7D /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
@@ -278,6 +296,10 @@
 		9DC0CE462A98DD5100CE8F98 /* ToggleLayoutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleLayoutButton.swift; sourceTree = "<group>"; };
 		9DC0CE482A98DEED00CE8F98 /* ToggleLayoutButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleLayoutButtonViewModel.swift; sourceTree = "<group>"; };
 		9DF201782A98F1F80046EB3B /* UICollectionViewFlowLayout+UpdateLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewFlowLayout+UpdateLayout.swift"; sourceTree = "<group>"; };
+		9DF2017D2A998B270046EB3B /* ArrayTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayTest.swift; sourceTree = "<group>"; };
+		9DF2017F2A998BA60046EB3B /* DateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTest.swift; sourceTree = "<group>"; };
+		9DF201812A9991C70046EB3B /* DoubleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleTest.swift; sourceTree = "<group>"; };
+		9DF201842A9992B90046EB3B /* OptionalTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalTest.swift; sourceTree = "<group>"; };
 		9DFC28052A8B83AC006E6741 /* NowPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
 		9DFC28072A8B8422006E6741 /* NowPlayingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewModel.swift; sourceTree = "<group>"; };
 		9DFC28092A8B843A006E6741 /* NowPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingView.swift; sourceTree = "<group>"; };
@@ -548,13 +570,22 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		9D8044792A9994BF001C5F32 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				9D80447A2A9994DB001C5F32 /* AsyncHelperTest.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		9D9EDDAC2A87F41900BBDE7D /* ApplicationTests */ = {
 			isa = PBXGroup;
 			children = (
-				9D9EDDAD2A87F41900BBDE7D /* ApplicationTests.swift */,
-				9DFC28682A907AE3006E6741 /* MockMovieRepository.swift */,
+				9D8044792A9994BF001C5F32 /* Helper */,
+				9DF2017C2A998AEE0046EB3B /* Extensions */,
+				9DF2017B2A998A680046EB3B /* Mocks */,
+				9DF2017A2A998A570046EB3B /* ViewModels */,
 				9D9EDEC02A88B32300BBDE7D /* ConetextFactoryTest.swift */,
-				9DFC28402A904DB8006E6741 /* NowPlayingViewModelTest.swift */,
 			);
 			path = ApplicationTests;
 			sourceTree = "<group>";
@@ -691,6 +722,40 @@
 				9DC0CE482A98DEED00CE8F98 /* ToggleLayoutButtonViewModel.swift */,
 			);
 			path = ToggleLayoutButton;
+			sourceTree = "<group>";
+		};
+		9DF2017A2A998A570046EB3B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9DFC28402A904DB8006E6741 /* NowPlayingViewModelTest.swift */,
+				9D8044802A9999E3001C5F32 /* FavoriteListViewModelTest.swift */,
+				9D8044822A999C1B001C5F32 /* SearchMovieViewModelTest.swift */,
+				9D8044842A999CE0001C5F32 /* MovieDetailViewModelTest.swift */,
+				9D8044862A999DBC001C5F32 /* ToggleLayoutButtonViewModelTest.swift */,
+				9D8044882A999F29001C5F32 /* ToggleFavorButtonViewModelTest.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9DF2017B2A998A680046EB3B /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				9DFC28682A907AE3006E6741 /* MockMovieRepository.swift */,
+				9D80447C2A999923001C5F32 /* MockFavoriteService.swift */,
+				9D80447E2A999939001C5F32 /* MockSettingService.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		9DF2017C2A998AEE0046EB3B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9DF2017D2A998B270046EB3B /* ArrayTest.swift */,
+				9DF2017F2A998BA60046EB3B /* DateTest.swift */,
+				9DF201812A9991C70046EB3B /* DoubleTest.swift */,
+				9DF201842A9992B90046EB3B /* OptionalTest.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		9DFC28042A8B82F3006E6741 /* NowPlaying */ = {
@@ -965,10 +1030,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D80447F2A999939001C5F32 /* MockSettingService.swift in Sources */,
 				9D9EDEC12A88B32300BBDE7D /* ConetextFactoryTest.swift in Sources */,
+				9D8044872A999DBC001C5F32 /* ToggleLayoutButtonViewModelTest.swift in Sources */,
+				9DF201852A9992B90046EB3B /* OptionalTest.swift in Sources */,
+				9D8044852A999CE0001C5F32 /* MovieDetailViewModelTest.swift in Sources */,
+				9D80447D2A999923001C5F32 /* MockFavoriteService.swift in Sources */,
+				9DF2017E2A998B270046EB3B /* ArrayTest.swift in Sources */,
+				9DF201802A998BA60046EB3B /* DateTest.swift in Sources */,
+				9D8044812A9999E3001C5F32 /* FavoriteListViewModelTest.swift in Sources */,
+				9D8044832A999C1B001C5F32 /* SearchMovieViewModelTest.swift in Sources */,
 				9DFC28412A904DB8006E6741 /* NowPlayingViewModelTest.swift in Sources */,
+				9DF201822A9991C70046EB3B /* DoubleTest.swift in Sources */,
+				9D8044892A999F29001C5F32 /* ToggleFavorButtonViewModelTest.swift in Sources */,
+				9D80447B2A9994DB001C5F32 /* AsyncHelperTest.swift in Sources */,
 				9DFC28692A907AE3006E6741 /* MockMovieRepository.swift in Sources */,
-				9D9EDDAE2A87F41900BBDE7D /* ApplicationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1290,6 +1366,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;

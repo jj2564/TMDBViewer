@@ -31,8 +31,8 @@ class FavoriteListViewModel: BaseViewModel {
     
     
     //MARK: - Properties
-    private lazy var favoriteService: FavoriteService? = userContext?.favoriteService
-    private lazy var settingService: SettingService? = userContext?.settingService
+    public lazy var favoriteService: FavoriteService? = userContext?.favoriteService
+    public lazy var settingService: SettingService? = userContext?.settingService
     
     public var movieViewModelList: [MovieCardViewModel] = [] {
         didSet { updateSort() }
@@ -48,7 +48,7 @@ class FavoriteListViewModel: BaseViewModel {
     
     
     //MARK: - Methods
-    public func fetchAll() {
+    public func fetchAll(completion: (() -> Void)?  = nil) {
         
         startLoadingView?()
         
@@ -56,6 +56,7 @@ class FavoriteListViewModel: BaseViewModel {
             
             self?.stopLoadingView?()
             self?.updateView?()
+            completion?()
         }
         
     }

@@ -43,6 +43,7 @@ class AsyncHelper {
         
         var result: T? = nil
         var actionError: Error? = nil
+        var hasHandledError = false
         
         let workItem = DispatchWorkItem {
             
@@ -52,24 +53,30 @@ class AsyncHelper {
                 actionError = error
             }
             
-            DispatchQueue.main.async {
-                self.logError(actionError, error: error)
-            }
         }
         
         queue.async(execute: workItem)
         
         workItem.notify(queue: DispatchQueue.main) {
             
+            if let actionError = actionError, !hasHandledError {
+                self.logError(actionError, error: error)
+                hasHandledError = true
+                return
+            }
+            
+            
             if let result = result {
                 do {
                     try completion(result)
-                } catch let error {
-                    actionError = error
+                } catch let completionError {
+                    if !hasHandledError {
+                        self.logError(completionError, error: error)
+                        hasHandledError = true
+                    }
                 }
             }
             
-            self.logError(actionError, error: error)
         }
         
     }

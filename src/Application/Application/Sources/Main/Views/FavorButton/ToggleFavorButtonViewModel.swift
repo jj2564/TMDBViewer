@@ -54,21 +54,25 @@ class ToggleFavorButtonViewModel: BaseViewModel {
         
     }
     
-    public func addFavor() {
+    public func addFavor(completion: (() -> Void)?  = nil) {
         
         guard let id = movieId else { return }
         
         self.addFavorite(by: id) { [weak self] isFavor in
+            self?.isFavor = true
             self?.updateFavorite?(isFavor)
+            completion?()
         }
         
     }
     
-    public func deleteFavor() {
+    public func deleteFavor(completion: (() -> Void)?  = nil) {
         guard let id = movieId else { return }
         
         self.deleteFavorite(by: id) { [weak self] isFavor in
+            self?.isFavor = false
             self?.updateFavorite?(isFavor)
+            completion?()
         }
         
     }
