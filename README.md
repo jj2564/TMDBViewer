@@ -57,18 +57,21 @@
 
 ### Demo
 
-<img src="images/login.png" alt="drawing" width="200"/>
-<img src="images/nowplaying.png" alt="drawing" width="200"/>  
-<img src="images/favor.png" alt="drawing" width="200"/>
-<img src="images/sort.png" alt="drawing" width="200"/>  
-<img src="images/search.png" alt="drawing" width="200"/>
-<img src="images/detail.png" alt="drawing" width="200"/>
+<img src="images/login.png" alt="login" width="200"/>
+<img src="images/nowplaying.png" alt="playing" width="200"/>  
+<img src="images/favor.png" alt="favor" width="200"/>
+<img src="images/sort.png" alt="sort" width="200"/>  
+<img src="images/search.png" alt="search" width="200"/>
+<img src="images/detail.png" alt="detail" width="200"/>
 
 
 ### Login
 
 使用 `ApiId` 來取得 `Requst Token`, 開啟使用者授權的網頁，等待使用者授權後可以取得 `session id`。
 透過 `Key Chain` 來保存這兩項資料。 下一次登入的時候就會自動透過這兩個資料來登入，如果驗證已經過期就會回到登入頁面。
+
+上述流程圖如下：
+<img src="images/login_flow.png" alt="flow" width="200"/>
 
 
 ### NowPlaying
